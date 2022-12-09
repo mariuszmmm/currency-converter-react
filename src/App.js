@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Amount from "./Amount";
+import Input from "./Input";
+import Output from "./Output";
+import Result from "./Result";
+import Button from "./Button";
+// import Currency from "./Currency";
+import Section from "./Section";
+import Rate from "./Rate";
+import Legend from "./Legend";
+import Form from "./Form";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Form>
+      <Legend title={"Kalkulator walutowy"} />
+      <Section title={"Kwota :"} body={<Amount />} />
+      <Section title={"Przelicz z :"} body={<Input />} />
+      <Section title={"Przelicz na :"} body={<Output />} />
+      <Result />
+      <Button />
+      <Section title={"kurs EUR :"} body={<Rate />} />
+      <Section title={"kurs USD :"} body={<Rate />} />
+      <Section title={"kurs GBP :"} body={<Rate />} />
+      {/* <Currency /> */}
+    </Form>
   );
 }
 

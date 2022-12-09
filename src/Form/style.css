@@ -1,0 +1,15 @@
+.form {
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.form__fieldset {
+    border: black 3px solid;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0px;
+    background-color: white;
+    box-shadow: 0px 0px 50px 20px #000000;
+}
