@@ -2,9 +2,10 @@
     display: inline-block;
     min-width: 100px;
     padding: 2px 5px;
+    margin-top: 5px;
     margin-left: 20px;
 }
 
 .form__section {
-    margin: 5px;
+    margin: 0 5px;
 }
