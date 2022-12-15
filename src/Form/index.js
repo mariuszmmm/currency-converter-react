@@ -52,7 +52,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 							value={amount}
 							onChange={onAmountChange}
 							className="form__field"
-							type="number"
+							type="numer"
 							step="1"
 							min="1"
 							max="999999999"
