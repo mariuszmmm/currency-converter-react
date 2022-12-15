@@ -53,11 +53,12 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 							onChange={onAmountChange}
 							className="form__field"
 							type="number"
-							step="0.01"
+							step="1"
 							min="1"
 							max="999999999"
 							placeholder=" Wpisz kwotę "
 							required
+							autoFocus
 						/>
 					}
 				/>
