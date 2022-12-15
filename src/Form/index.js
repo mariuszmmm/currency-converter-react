@@ -42,7 +42,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 	const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
 
 	return (
-		<form className="form" onSubmit={onFormSubmit} onInput={onFormClick}>
+		<form className="form" onSubmit={onFormSubmit} onClick={onFormClick}>
 			<fieldset className="form__fieldset">
 				<Legend title={"Kalkulator walutowy"} />
 				<Section
