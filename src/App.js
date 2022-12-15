@@ -2,7 +2,6 @@ import { Form } from "./Form";
 import { useState } from "react";
 import { currencies } from "./currencies"
 
-
 function App() {
   const [result, setResult] = useState();
 
@@ -11,7 +10,6 @@ function App() {
     const rateInput = currencies
       .find(({ symbol }) => symbol === currencyInput)
       .rate;
-
 
     const rateOutput = currencies
       .find(({ symbol }) => symbol === currencyOutput)
@@ -27,14 +25,17 @@ function App() {
     })
   };
 
- 
+  const resetResult = () => {
+    setResult()
+  };
+
   return (
     <Form
       result={result}
       calculateResult={calculateResult}
-
+      resetResult={resetResult}
     />
   );
-}
+};
 
 export default App;

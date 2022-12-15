@@ -6,7 +6,7 @@ import Button from "../Button";
 import { currencies } from "../currencies"
 import { useState } from "react";
 
-export const Form = ({ calculateResult, result }) => {
+export const Form = ({ calculateResult, result, resetResult }) => {
 	const [currencyInput, setCurrencyInput] = useState(currencies[0].symbol);
 	const [currencyOutput, setCurrencyOutput] = useState(currencies[1].symbol);
 	const [lastDiferentInput, setlastDiferentInput] = useState(currencies[0].symbol);
@@ -31,6 +31,10 @@ export const Form = ({ calculateResult, result }) => {
 		};
 	};
 
+	const onFormClick = () => {
+		resetResult();
+	}
+
 	const onAmountChange = ({ target }) => setAmount(target.value);
 
 	const onInputChange = ({ target }) => setCurrencyInput(target.value);
@@ -38,7 +42,7 @@ export const Form = ({ calculateResult, result }) => {
 	const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
 
 	return (
-		<form className="form" onSubmit={onFormSubmit}>
+		<form className="form" onSubmit={onFormSubmit} onInput={onFormClick}>
 			<fieldset className="form__fieldset">
 				<Legend title={"Kalkulator walutowy"} />
 				<Section
