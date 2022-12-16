@@ -49,10 +49,11 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 					title={"Kwota :"}
 					body={
 						<input
+							name="amount"
 							value={amount}
 							onChange={onAmountChange}
 							className="form__field"
-							type="numer"
+							type="number"
 							step="1"
 							min="1"
 							max="999999999"
@@ -66,6 +67,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 					title={"Przelicz z :"}
 					body={
 						<select
+							name="currencyInput"
 							value={currencyInput}
 							onClick={onSelectClick}
 							onChange={onInputChange}
@@ -76,7 +78,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 									key={currency.symbol}
 									value={currency.symbol}
 								>
-									{currency.symbol} / {currency.name}
+									{currency.name} / {currency.symbol}
 								</option>
 							))}
 						</select>
@@ -86,6 +88,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 					title={"Przelicz na :"}
 					body={
 						<select
+							name="currencyOutput"
 							value={currencyOutput}
 							onClick={onSelectClick}
 							onChange={onOutputChange}
@@ -96,7 +99,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 									key={currency.symbol}
 									value={currency.symbol}
 								>
-									{currency.symbol} / {currency.name}
+									{currency.name} / {currency.symbol}
 								</option>
 							))}
 						</select>
@@ -104,18 +107,25 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 				/>
 				<Result result={result} />
 				<Button />
-				{currencies.map((currency) => (
-					<Section key={currency.symbol}
-						title={`Kurs ${currency.symbol} :`}
-						body={
-							<input
-								defaultValue={currency.rate}
-								className="form__field js-rateEUR"
-								disabled
+				{currencies.map((currency) => {
+					if (currency.symbol !== "PLN") {
+						return (
+							<Section key={currency.symbol}
+								title={`Kurs ${currency.symbol} :`}
+								body={
+									<input
+										name="rate"
+										defaultValue={currency.rate}
+										className="form__field js-rateEUR"
+										disabled
+									/>
+								}
 							/>
-						}
-					/>
-				))}
+						)
+					}
+
+				})}
+				<Legend title={<footer>Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli&nbsp;nr&nbsp;243/A/NBP/2022 z&nbsp;dnia&nbsp;2022-&nbsp;12-&nbsp;16</footer>} />
 			</fieldset>
 		</form>
 	)
