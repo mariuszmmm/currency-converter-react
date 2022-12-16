@@ -9,19 +9,19 @@ export const currencies = [
   {
     symbol: "EUR",
     name: "Euro",
-    rate: 4.7039,
+    rate: 4.6843,
     unit: "€",
   },
   {
     symbol: "USD",
     name: "Dolar",
-    rate: 4.7485,
+    rate: 4.4100,
     unit: "$",
   },
   {
     symbol: "GBP",
     name: "Funt",
-    rate: 5.4601,
+    rate: 5.4418,
     unit: "£",
   },
 ];
