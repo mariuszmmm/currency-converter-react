@@ -1,8 +1,8 @@
 .form__legend {
     background-color: hsl(210, 65%, 20%);
     color: white;
-    padding: 10px 44px;
+    padding: 10px 20px;
     border-radius: 5px;
     border: black 3px solid;
-    margin-left: 14px;
+    margin-top: 15px;
 }
