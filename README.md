@@ -1,4 +1,4 @@
-# **Currency converter**    (currently without interactions)
+# **Currency converter**
 
 ## Description
 
