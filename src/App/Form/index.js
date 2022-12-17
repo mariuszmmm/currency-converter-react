@@ -2,7 +2,7 @@ import "./style.css";
 import Legend from "../Legend";
 import Section from "../Section";
 import Result from "../Result";
-import Rate from "../Rate";
+import Rates from "../Rates";
 import { currencies } from "../currencies"
 import { useState } from "react";
 
@@ -133,7 +133,7 @@ const Form = () => {
                resultOutdated={resultOutdated}
             />
             <button className="form__button">Przelicz</button>
-            <Rate />
+            <Rates />
             <Legend title={<footer>Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli&nbsp;nr&nbsp;243/A/NBP/2022 z&nbsp;dnia&nbsp;2022-&nbsp;12-&nbsp;16</footer>} />
          </fieldset>
       </form>

@@ -1,7 +1,7 @@
 import Section from "../Section";
 import { currencies } from "../currencies"
 
-const Rate = () => {
+const Rates = () => {
    return (
       currencies.map((currency) => {
          if (currency.symbol !== "PLN") {
@@ -23,4 +23,4 @@ const Rate = () => {
    )
 };
 
-export default Rate;
+export default Rates;
