@@ -18,7 +18,7 @@ export const currencies = [
     rate: 4.6934,
     unit: "€",
   },
-   {
+  {
     symbol: "GBP",
     name: "funt",
     rate: 5.3716,
