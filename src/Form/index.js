@@ -2,7 +2,6 @@ import "./style.css";
 import Legend from "../Legend";
 import Section from "../Section";
 import Result from "../Result";
-import Button from "../Button";
 import { currencies } from "../currencies"
 import { useState } from "react";
 
@@ -106,7 +105,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
 					}
 				/>
 				<Result result={result} />
-				<Button />
+				<button className="form__button">Przelicz</button>
 				{currencies.map((currency) => {
 					if (currency.symbol !== "PLN") {
 						return (
