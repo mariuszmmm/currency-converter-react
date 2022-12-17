@@ -1,5 +1,5 @@
 import Section from "../Section";
-import { currencies } from "../currencies"
+import { currencies } from "../currencies";
 
 const Rates = () => {
    return (

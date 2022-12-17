@@ -1,9 +1,10 @@
 import "./style.css";
 import Legend from "../Legend";
 import Section from "../Section";
+import Options from "../Options";
 import Result from "../Result";
 import Rates from "../Rates";
-import { currencies } from "../currencies"
+import { currencies } from "../currencies";
 import { useState } from "react";
 
 const Form = () => {
@@ -96,14 +97,7 @@ const Form = () => {
                      onChange={onInputChange}
                      className="form__field form__field--select"
                   >
-                     {currencies.map(currency => (
-                        <option
-                           key={currency.symbol}
-                           value={currency.symbol}
-                        >
-                           {currency.name} / {currency.symbol}
-                        </option>
-                     ))}
+                     <Options />
                   </select>
                }
             />
@@ -117,14 +111,7 @@ const Form = () => {
                      onChange={onOutputChange}
                      className="form__field form__field--select"
                   >
-                     {currencies.map(currency => (
-                        <option
-                           key={currency.symbol}
-                           value={currency.symbol}
-                        >
-                           {currency.name} / {currency.symbol}
-                        </option>
-                     ))}
+                     <Options />
                   </select>
                }
             />
