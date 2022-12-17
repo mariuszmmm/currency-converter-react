@@ -5,13 +5,34 @@ import Result from "../Result";
 import { currencies } from "../currencies"
 import { useState } from "react";
 
-export const Form = ({ calculateResult, result, resetResult }) => {
+const Form = () => {
+  const [amount, setAmount] = useState("");
   const [currencyInput, setCurrencyInput] = useState(currencies[0].symbol);
   const [currencyOutput, setCurrencyOutput] = useState(currencies[1].symbol);
   const [lastDiferentInput, setlastDiferentInput] = useState(currencies[0].symbol);
   const [lastDiferentOutput, setlastDiferentOutput] = useState(currencies[1].symbol);
-  const [amount, setAmount] = useState("");
+  const [result, setResult] = useState();
   const [resultOutdated, setResultOutdated] = useState(false);
+
+  const calculateResult = (currencyInput, currencyOutput, amount) => {
+
+    const rateInput = currencies
+      .find(({ symbol }) => symbol === currencyInput)
+      .rate;
+
+    const rateOutput = currencies
+      .find(({ symbol }) => symbol === currencyOutput)
+      .rate;
+
+    const unit = currencies
+      .find(({ symbol }) => symbol === currencyOutput)
+      .unit;
+
+    setResult({
+      exchangeResult: amount * rateInput / rateOutput,
+      unit,
+    })
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -134,3 +155,5 @@ export const Form = ({ calculateResult, result, resetResult }) => {
     </form>
   )
 };
+
+export default Form;
