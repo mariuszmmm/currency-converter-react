@@ -1,12 +1,12 @@
 .form__result {
-    margin: 15px;
-    height: 40px;
-    font-size: 40px;
-    text-align: center;
-    font-weight: 700;
-    text-shadow: grey 1px 1px 10px;
+	margin: 15px;
+	height: 40px;
+	font-size: 40px;
+	text-align: center;
+	font-weight: 700;
+	text-shadow: grey 1px 1px 10px;
 }
 
 .form__result--invalid {
-color: rgba(128, 128, 128, 0.397)
+	color: rgba(128, 128, 128, 0.397)
 }
