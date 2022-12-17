@@ -1,4 +1,3 @@
-
 export const currencies = [
    {
       symbol: "PLN",
