@@ -25,15 +25,15 @@ function App() {
     })
   };
 
-  const resetResult = () => {
-    setResult()
-  };
+  // const resetResult = () => {
+  //   setResult()
+  // };
 
   return (
     <Form
       result={result}
       calculateResult={calculateResult}
-      resetResult={resetResult}
+      // resetResult={resetResult}
     />
   );
 };

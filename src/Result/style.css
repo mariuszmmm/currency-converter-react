@@ -6,3 +6,7 @@
     font-weight: 700;
     text-shadow: grey 1px 1px 10px;
 }
+
+.form__result--invalid {
+color: rgba(128, 128, 128, 0.397)
+}

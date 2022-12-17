@@ -11,10 +11,12 @@ export const Form = ({ calculateResult, result, resetResult }) => {
   const [lastDiferentInput, setlastDiferentInput] = useState(currencies[0].symbol);
   const [lastDiferentOutput, setlastDiferentOutput] = useState(currencies[1].symbol);
   const [amount, setAmount] = useState("");
+  const [resultOutdated, setResultOutdated] = useState(false);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult(currencyInput, currencyOutput, amount);
+    setResultOutdated(false);
   };
 
   const onSelectClick = () => {
@@ -30,8 +32,8 @@ export const Form = ({ calculateResult, result, resetResult }) => {
     };
   };
 
-  const onFormClick = () => {
-    resetResult();
+  const onFormInput = () => {
+    setResultOutdated(true);
   }
 
   const onAmountChange = ({ target }) => setAmount(target.value);
@@ -41,7 +43,7 @@ export const Form = ({ calculateResult, result, resetResult }) => {
   const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
 
   return (
-    <form className="form" onSubmit={onFormSubmit} onClick={onFormClick}>
+    <form className="form" onSubmit={onFormSubmit} onInput={onFormInput}>
       <fieldset className="form__fieldset">
         <Legend title={"Kalkulator walutowy"} />
         <Section
@@ -104,7 +106,10 @@ export const Form = ({ calculateResult, result, resetResult }) => {
             </select>
           }
         />
-        <Result result={result} />
+        <Result
+          result={result}
+          resultOutdated={resultOutdated}
+        />
         <button className="form__button">Przelicz</button>
         {currencies.map((currency) => {
           if (currency.symbol !== "PLN") {
