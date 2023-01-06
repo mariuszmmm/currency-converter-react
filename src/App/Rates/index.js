@@ -3,9 +3,9 @@ import { currencies } from "../currencies";
 
 const currenciesWithOutPLN = currencies.filter(({ symbol }) => symbol !== "PLN");
 
-const Rates = () => (
-   currenciesWithOutPLN.map((currency) => {
-      return (
+const Rates = () => {
+   return (
+      currenciesWithOutPLN.map((currency) => (
          <Section key={currency.symbol}
             title={`Kurs ${currency.symbol} :`}
             body={
@@ -17,8 +17,8 @@ const Rates = () => (
                />
             }
          />
-      )
-   })
-);
+      ))
+   )
+};
 
 export default Rates;
