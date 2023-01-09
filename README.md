@@ -2,7 +2,7 @@
 
 ## Description
 
-Simple currency converter from PLN, EUR, USD, GBP. Converts currencies to both sides.  
+Simple currency converter from PLN, EUR, USD, GBP, CNY, UAH. Converts currencies to both sides.  
 Currency rates are assigned by default but can be changed.  
 
 The application has been prepared for convenient use also on tablets and smartphones.
