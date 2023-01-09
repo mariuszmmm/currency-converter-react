@@ -1,15 +1,14 @@
 import "./style.css";
-import CurrentTime from "../CurrentTime";
+import { CurrentTime }  from "../CurrentTime";
 import Legend from "../Legend";
 import Section from "../Section";
 import Options from "../Options";
 import Result from "../Result";
 import Rates from "../Rates";
 import { currencies } from "../currencies";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Form = () => {
-   const [currentTime, setCurrentTime] = useState(new Date());
    const [amount, setAmount] = useState("");
    const [currencyInput, setCurrencyInput] = useState(currencies[0].symbol);
    const [currencyOutput, setCurrencyOutput] = useState(currencies[1].symbol);
@@ -17,16 +16,6 @@ const Form = () => {
    const [lastDiferentOutput, setlastDiferentOutput] = useState(currencies[1].symbol);
    const [result, setResult] = useState();
    const [resultOutdated, setResultOutdated] = useState(false);
-
-   useEffect(() => {
-      const intervalId = setInterval(() => {
-         setCurrentTime(new Date());
-      }, 1000);
-
-      return () => {
-         clearInterval(intervalId);
-      };
-   }, []);
 
    const calculateResult = (currencyInput, currencyOutput, amount) => {
 
@@ -81,7 +70,7 @@ const Form = () => {
       <form className="form" onSubmit={onFormSubmit} onInput={onFormInput}>
          <fieldset className="form__fieldset">
             <Legend title={"Kalkulator walutowy"} />
-            <CurrentTime currentTime={currentTime}/>
+            <CurrentTime />
             <Section
                title={"Kwota :"}
                body={
