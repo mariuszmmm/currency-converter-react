@@ -1,10 +1,10 @@
 import "./style.css";
-import { CurrentTime }  from "../CurrentTime";
-import Legend from "../Legend";
-import Section from "../Section";
+import { CurrentTime }  from "./CurrentTime";
+import Legend from "./Legend";
+import Section from "./Section";
 import Options from "../Options";
-import Result from "../Result";
-import Rates from "../Rates";
+import Result from "./Result";
+import Rates from "./Rates";
 import { currencies } from "../currencies";
 import { useState } from "react";
 
