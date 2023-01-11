@@ -1,15 +1,15 @@
-import "./style.css";
 import { useCurrentTime } from "./useCurrentTime";
 import { formatCurrentTime } from "./formatCurrentTime";
+import { Date } from "./styled";
 
 export const CurrentTime = () => {
 	const currentTime = useCurrentTime();
 
 	return (
-		<p className="form__date">
+		<Date>
 			Dzisiaj jest
 			{" "}
 			{formatCurrentTime(currentTime)}
-		</p>
+		</Date>
 	)
 };

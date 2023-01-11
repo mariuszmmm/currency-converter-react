@@ -1,15 +1,17 @@
-import "./style.css";
+import { Container } from "./styled"
 
 const Result = ({ result, resultOutdated }) => (
-   <div className={`form__result ${resultOutdated ? "form__result--invalid" : ""}`}>
+   <Container
+      outdated={resultOutdated}
+   >
       {result !== undefined && (
          <>
-            {Number((result.exchangeResult).toFixed(2)).toLocaleString("pl-PL", {minimumFractionDigits: 2})}
+            {Number((result.exchangeResult).toFixed(2)).toLocaleString("pl-PL", { minimumFractionDigits: 2 })}
             &nbsp;
             {result.unit}
          </>
       )}
-   </div>
+   </Container>
 );
 
 export default Result;

@@ -1,13 +1,12 @@
-import "./style.css";
+import { StyledSection, Content } from "./styled";
 
 const Section = ({ title, body }) => (
-   <section className="form__section">
+   <StyledSection>
       <label>
-         <span className="form__leabelText">{title}</span>
+         <Content>{title}</Content>
          {body}
       </label>
-   </section>
+   </StyledSection>
 );
 
 export default Section;
-

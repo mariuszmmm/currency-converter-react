@@ -1,5 +1,4 @@
-import "./style.css";
-import { CurrentTime }  from "../CurrentTime";
+import { CurrentTime } from "../CurrentTime";
 import Legend from "./Legend";
 import Section from "./Section";
 import Options from "./Options";
@@ -7,6 +6,7 @@ import Result from "./Result";
 import Rates from "./Rates";
 import { currencies } from "../currencies";
 import { useState } from "react";
+import { StyledForm, Contents, Input, Button } from "./styled";
 
 const Form = () => {
    const [amount, setAmount] = useState("");
@@ -67,18 +67,17 @@ const Form = () => {
    const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
 
    return (
-      <form className="form" onSubmit={onFormSubmit} onInput={onFormInput}>
-         <fieldset className="form__fieldset">
+      <StyledForm onSubmit={onFormSubmit} onInput={onFormInput}>
+         <Contents>
             <Legend title={"Kalkulator walutowy"} />
             <CurrentTime />
             <Section
                title={"Kwota :"}
                body={
-                  <input
+                  <Input
                      name="amount"
                      value={amount}
                      onChange={onAmountChange}
-                     className="form__field"
                      type="number"
                      step="1"
                      min="1"
@@ -92,40 +91,38 @@ const Form = () => {
             <Section
                title={"Przelicz z :"}
                body={
-                  <select
+                  <Input as="select"
                      name="currencyInput"
                      value={currencyInput}
                      onClick={onSelectClick}
                      onChange={onInputChange}
-                     className="form__field form__field--select"
                   >
                      <Options />
-                  </select>
+                  </Input>
                }
             />
             <Section
                title={"Przelicz na :"}
                body={
-                  <select
+                  <Input as="select"
                      name="currencyOutput"
                      value={currencyOutput}
                      onClick={onSelectClick}
                      onChange={onOutputChange}
-                     className="form__field form__field--select"
                   >
                      <Options />
-                  </select>
+                  </Input>
                }
             />
             <Result
                result={result}
                resultOutdated={resultOutdated}
             />
-            <button className="form__button">Przelicz</button>
+            <Button>Przelicz</Button>
             <Rates />
             <Legend title={<footer>Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli&nbsp;nr&nbsp;243/A/NBP/2022 z&nbsp;dnia&nbsp;2022-&nbsp;12-&nbsp;16</footer>} />
-         </fieldset>
-      </form>
+         </Contents>
+      </StyledForm>
    )
 };
 
