@@ -50,3 +50,21 @@ export const Button = styled.button`
     background-color: hsl(210, 65%, 40%);
    }
 `;
+
+export const Flags = styled.span`
+   position: relative;
+
+   &::before {
+   background-image: url(${(props) => props.flag});
+   background-position: center;
+   box-shadow: 0 0 7px rgb(0 0 0 / 40%);
+   content: '';
+   height: 20px;
+   left: 10px;
+   top: 0;
+   bottom: 0;
+   width: 35px;
+   position: absolute;
+   transition: 0.2s;
+}
+`;

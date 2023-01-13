@@ -9,6 +9,6 @@ export const Container = styled.div`
 	text-shadow: grey 1px 1px 10px;
 
    ${({ outdated }) => outdated && css`
-      color: rgba(128, 128, 128, 0.397)
+      color: rgba(128, 128, 128, 0.2)
    `}
 `;

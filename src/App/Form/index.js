@@ -6,7 +6,7 @@ import Result from "./Result";
 import Rates from "./Rates";
 import { currencies } from "../currencies";
 import { useState } from "react";
-import { StyledForm, Contents, Input, Button } from "./styled";
+import { StyledForm, Contents, Input, Button, Flags } from "./styled";
 
 const Form = () => {
    const [amount, setAmount] = useState("");
@@ -36,6 +36,14 @@ const Form = () => {
          unit,
       })
    };
+
+   const flagInput = currencies
+      .find(({ symbol }) => symbol === currencyInput)
+      .flag;
+
+   const flagOutput = currencies
+      .find(({ symbol }) => symbol === currencyOutput)
+      .flag;
 
    const onFormSubmit = (event) => {
       event.preventDefault();
@@ -91,27 +99,31 @@ const Form = () => {
             <Section
                title={"Przelicz z :"}
                body={
-                  <Input as="select"
-                     name="currencyInput"
-                     value={currencyInput}
-                     onClick={onSelectClick}
-                     onChange={onInputChange}
-                  >
-                     <Options />
-                  </Input>
+                  <Flags flag={flagInput}>
+                     <Input as="select"
+                        name="currencyInput"
+                        value={currencyInput}
+                        onClick={onSelectClick}
+                        onChange={onInputChange}
+                     >
+                        <Options />
+                     </Input>
+                  </Flags>
                }
             />
             <Section
                title={"Przelicz na :"}
                body={
-                  <Input as="select"
-                     name="currencyOutput"
-                     value={currencyOutput}
-                     onClick={onSelectClick}
-                     onChange={onOutputChange}
-                  >
-                     <Options />
-                  </Input>
+                  <Flags flag={flagOutput}>
+                     <Input as="select"
+                        name="currencyOutput"
+                        value={currencyOutput}
+                        onClick={onSelectClick}
+                        onChange={onOutputChange}
+                     >
+                        <Options />
+                     </Input>
+                  </Flags>
                }
             />
             <Result
