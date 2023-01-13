@@ -2,10 +2,8 @@ import { StyledSection, Content } from "./styled";
 
 const Section = ({ title, body }) => (
    <StyledSection>
-      <label>
-         <Content>{title}</Content>
-         {body}
-      </label>
+      <Content>{title}</Content>
+      {body}
    </StyledSection>
 );
 

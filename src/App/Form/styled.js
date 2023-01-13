@@ -18,15 +18,15 @@ export const Contents = styled.fieldset`
 
 
 export const Input = styled.input`
-    border: 1px solid #666;
-    padding: 5px 10px;
-    max-width: 200px;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 18px;
-    text-align: right;
-    margin-bottom: 10px;
-    background-color: white;
+   border: 1px solid #666;
+   padding: 5px 10px;
+   max-width: 200px;
+   width: 100%;
+   border-radius: 5px;
+   font-size: 18px;
+   text-align: right;
+   margin-bottom: 10px;
+   background-color: white;
 `;
 
 export const Button = styled.button`
@@ -42,12 +42,12 @@ export const Button = styled.button`
    margin-bottom: 20px;
 
    &:hover {
-      cursor: pointer;
-      background-color: hsl(210, 65%, 30%);
+   cursor: pointer;
+   background-color: hsl(210, 65%, 30%);
    }
 
    &:active {
-    background-color: hsl(210, 65%, 40%);
+   background-color: hsl(210, 65%, 40%);
    }
 `;
 
