@@ -3,13 +3,13 @@ import { formatCurrentTime } from "./formatCurrentTime";
 import { Date } from "./styled";
 
 export const CurrentTime = () => {
-	const currentTime = useCurrentTime();
+   const currentTime = useCurrentTime();
 
-	return (
-		<Date>
-			Dzisiaj jest
-			{" "}
-			{formatCurrentTime(currentTime)}
-		</Date>
-	)
+   return (
+      <Date>
+         Dzisiaj jest
+         {" "}
+         {formatCurrentTime(currentTime)}
+      </Date>
+   )
 };
