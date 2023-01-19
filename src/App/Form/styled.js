@@ -36,7 +36,7 @@ export const Input = styled.input`
    text-align: right;
    margin-bottom: 10px;
 
-   @media(max-width: 357px){
+   @media(max-width: 370px){
       width: 100%;
    }
 `;
