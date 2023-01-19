@@ -9,16 +9,15 @@ export const theme = {
 
 export const StyledForm = styled.form`
    max-width: 560px;
-   min-width: 400px;
    margin: 0 auto;
-   padding: 0 10px;
+   padding: 0 5px;
 `;
 
 export const Contents = styled.fieldset`
    background-color: ${(props) => props.theme.colors.background};
    color: ${(props) => props.theme.colors.color};
    border: black 3px solid;
-   padding: 10px 20px;
+   padding: 10px 5%;
    border-radius: 5px;
    margin: 20px 0px;
    box-shadow: 0px 0px 50px 20px #000000;
@@ -28,9 +27,9 @@ export const Input = styled.input`
    background-color: white;
    color: black;
    border: 1px solid #666;
-   padding: 5px 10px;
-   max-width: 200px;
-   width: 100%;
+   padding: 5px 2px;
+   min-width: 190px;
+   width: 60%;
    border-radius: 5px;
    font-size: 18px;
    text-align: right;
@@ -62,7 +61,7 @@ export const Button = styled.button`
 export const Flags = styled.span`
    position: relative;
 
-   &::before {
+   &::after {
    background-image: url(${({ flag }) => flag});
    background-position: center;
    box-shadow: 0 0 7px rgb(0 0 0 / 40%);
