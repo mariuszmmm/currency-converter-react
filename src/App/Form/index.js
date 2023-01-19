@@ -1,4 +1,4 @@
-import { CurrentTime } from "../CurrentTime";
+import { CurrentDate } from "../CurrentDate";
 import Legend from "./Legend";
 import Section from "./Section";
 import Options from "./Options";
@@ -77,7 +77,7 @@ const Form = () => {
          <StyledForm onSubmit={onFormSubmit}>
             <Contents>
                <Legend title={"Kalkulator walutowy"} />
-               <CurrentTime />
+               <CurrentDate />
                <Section
                   title={"Kwota :"}
                   body={
