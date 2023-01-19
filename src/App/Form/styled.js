@@ -10,7 +10,7 @@ export const theme = {
 export const StyledForm = styled.form`
    max-width: 560px;
    margin: 0 auto;
-   padding: 0 5px;
+   padding: 0 4px;
 `;
 
 export const Contents = styled.fieldset`
