@@ -9,7 +9,8 @@ export const Container = styled.div`
    font-weight: 700;
    text-shadow: grey 1px 1px 10px;
    padding: 0;
-   padding-right: 35px;
+   padding: 0 35px;
+   color: red;
 
    ${({ outdated }) => outdated && css`
       color: rgba(128, 128, 128, 0.2)
