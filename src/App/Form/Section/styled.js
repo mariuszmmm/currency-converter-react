@@ -9,5 +9,5 @@ export const Content = styled.span`
    min-width: 100px;
    padding: 2px 5px;
    margin-top: 5px;
-   margin-left: 20px;
+   margin-left: 2%;
 `;
