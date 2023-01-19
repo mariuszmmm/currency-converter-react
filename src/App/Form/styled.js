@@ -34,6 +34,10 @@ export const Input = styled.input`
    font-size: 18px;
    text-align: right;
    margin-bottom: 10px;
+
+   @media(max-width: 357px){
+      width: 100%;
+   }
 `;
 
 export const Button = styled.button`

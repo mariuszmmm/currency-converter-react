@@ -7,7 +7,7 @@ export const StyledSection = styled.section`
 export const Content = styled.span`
    display: inline-block;
    min-width: 100px;
-   padding: 2px 5px;
-   margin-top: 5px;
+   padding: 0px 5px;
+   margin: 0;
    margin-left: 2%;
 `;
