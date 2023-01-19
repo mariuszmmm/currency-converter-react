@@ -10,7 +10,6 @@ export const theme = {
 export const StyledForm = styled.form`
    max-width: 560px;
    margin: 0 auto;
-   padding: 0 4px;
 `;
 
 export const Contents = styled.fieldset`
@@ -21,6 +20,8 @@ export const Contents = styled.fieldset`
    border-radius: 5px;
    margin: 20px 0px;
    box-shadow: 0px 0px 50px 20px #000000;
+   margin-right: calc(+10px);
+   margin-left: calc(+10px);
 `;
 
 export const Input = styled.input`
