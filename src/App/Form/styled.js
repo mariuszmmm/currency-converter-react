@@ -1,34 +1,27 @@
 import styled from "styled-components";
 
-export const theme = {
-   colors: {
-      background: "white",
-      color: "black"
-   },
-};
-
 export const StyledForm = styled.form`
    max-width: 560px;
    margin: 0 auto;
 `;
 
 export const Contents = styled.fieldset`
-   background-color: ${(props) => props.theme.colors.background};
-   color: ${(props) => props.theme.colors.color};
-   border: black 3px solid;
+   background: ${({ theme }) => theme.color.primary};
+   color: ${({ theme }) => theme.color.quaternary};
+   border: solid 3px ${({ theme }) => theme.color.quaternary};
    padding: 10px 5%;
    border-radius: 5px;
    margin: 20px 0px;
-   box-shadow: 0px 0px 50px 20px #000000;
+   box-shadow: 0px 0px 50px 20px ${({ theme }) => theme.color.quaternary};
    margin-right: calc(+10px);
    margin-left: calc(+10px);
 `;
 
 export const Input = styled.input`
-   background-color: white;
-   color: black;
-   border: 1px solid #666;
-   padding: 5px 2px;
+   background: ${({ theme }) => theme.color.primary};
+   color: ${({ theme }) => theme.color.quaternary};
+   border: 1px solid ${({ theme }) => theme.color.secondary};
+   padding: 5px 10px;
    min-width: 190px;
    width: 60%;
    border-radius: 5px;
@@ -36,7 +29,7 @@ export const Input = styled.input`
    text-align: right;
    margin-bottom: 10px;
 
-   @media(max-width: 370px){
+   @media(max-width: ${({ theme }) => theme.breakpoint.mobileMin}px){
       width: 100%;
    }
 `;
@@ -46,20 +39,21 @@ export const Button = styled.button`
    width: 100%;
    border: none;
    background-color: hsl(210, 65%, 20%);
-   color: white;
+   color: ${({ theme }) => theme.color.primary};
    font-size: 20px;
    padding: 10px;
    border-radius: 5px;
-   border: black 3px solid;
+   border: solid 3px ${({ theme }) => theme.color.quaternary};
    margin-bottom: 20px;
+   transition: 0.1s;
 
    &:hover {
-   cursor: pointer;
-   background-color: hsl(210, 65%, 30%);
+      cursor: pointer;
+      filter: brightness(120%);
    }
 
    &:active {
-   background-color: hsl(210, 65%, 40%);
+      filter: brightness(140%);
    }
 `;
 
@@ -67,17 +61,17 @@ export const Flags = styled.span`
    position: relative;
 
    &::after {
-   background-image: url(${({ flag }) => flag});
-   background-position: center;
-   box-shadow: 0 0 7px rgb(0 0 0 / 40%);
-   content: '';
-   height: 20px;
-   left: 10px;
-   top: 0;
-   bottom: 0;
-   margin: auto 0;
-   width: 35px;
-   position: absolute;
-   transition: 0.2s;
-}
+      background-image: url(${({ flag }) => flag});
+      background-position: center;
+      box-shadow: 4px 4px 6px rgb(0 0 0 / 90%);
+      content: '';
+      height: 20px;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      width: 35px;
+      position: absolute;
+      transition: 0.2s;
+   }
 `;

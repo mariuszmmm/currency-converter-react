@@ -8,5 +8,5 @@ export const Date = styled.div`
    font-family: 'Roboto Mono', monospace;
    font-size: 13px;
    text-align: right;
-   color: ${(props) => props.theme.colors.color};
+   color: ${({ theme }) => theme.color.quaternary};
 `;

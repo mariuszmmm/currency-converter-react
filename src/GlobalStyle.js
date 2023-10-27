@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import background from "./waluta.png"
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 html {
    box-sizing: border-box;
 }
@@ -11,13 +11,12 @@ html {
 }
 
 body {
-   background-color: hsl(0, 0%, 15%);
+   background-color:${({ theme }) => theme.color.tertiary};
    font-family: "Lato", sans-serif;
    background-image: url("${background}");
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
+   user-select: none;
 }
 `;
-
-export default GlobalStyle;
