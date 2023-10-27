@@ -130,7 +130,7 @@ const Form = () => {
             />
             <Button>Przelicz</Button>
             <Rates />
-            <Legend title={<footer>Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli&nbsp;nr&nbsp;243/A/NBP/2022 z&nbsp;dnia&nbsp;2022-&nbsp;12-&nbsp;16</footer>} />
+            <Legend title={<footer>Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli&nbsp;nr&nbsp;209/A/NBP/2023 z&nbsp;dnia&nbsp;2023-&nbsp;10-&nbsp;27</footer>} />
          </Contents>
       </StyledForm>
    )
