@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
    }
 
    body {
-      background-color:${({ theme }) => theme.color.tertiary};
+      background-color:${({ theme }) => theme.color.doveGray};
       font-family: "Lato", sans-serif;
       background-image: url("${background}");
       background-repeat: no-repeat;

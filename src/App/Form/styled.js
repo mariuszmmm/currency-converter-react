@@ -2,25 +2,26 @@ import styled from "styled-components";
 
 export const StyledForm = styled.form`
    max-width: 560px;
+   min-width: 300px;
    margin: 0 auto;
 `;
 
 export const Contents = styled.fieldset`
-   background: ${({ theme }) => theme.color.primary};
-   color: ${({ theme }) => theme.color.quaternary};
-   border: solid 3px ${({ theme }) => theme.color.quaternary};
+   background: ${({ theme }) => theme.color.white};
+   color: ${({ theme }) => theme.color.black};
+   border: solid 3px ${({ theme }) => theme.color.black};
    padding: 10px 5%;
    border-radius: 5px;
    margin: 20px 0px;
-   box-shadow: 0px 0px 50px 20px ${({ theme }) => theme.color.quaternary};
+   box-shadow: 0px 0px 50px 20px ${({ theme }) => theme.color.black};
    margin-right: calc(+10px);
    margin-left: calc(+10px);
 `;
 
 export const Input = styled.input`
-   background: ${({ theme }) => theme.color.primary};
-   color: ${({ theme }) => theme.color.quaternary};
-   border: 1px solid ${({ theme }) => theme.color.secondary};
+   background: ${({ theme }) => theme.color.white};
+   color: ${({ theme }) => theme.color.black};
+   border: 1px solid ${({ theme }) => theme.color.Silver};
    padding: 5px 10px;
    min-width: 190px;
    width: 60%;
@@ -38,12 +39,12 @@ export const Button = styled.button`
    max-width: 500px;
    width: 100%;
    border: none;
-   background-color: hsl(210, 65%, 20%);
-   color: ${({ theme }) => theme.color.primary};
+   background-color: ${({ theme }) => theme.color.prussianBlue};
+   color: ${({ theme }) => theme.color.white};
    font-size: 20px;
    padding: 10px;
    border-radius: 5px;
-   border: solid 3px ${({ theme }) => theme.color.quaternary};
+   border: solid 3px ${({ theme }) => theme.color.black};
    margin-bottom: 20px;
    transition: 0.1s;
 
