@@ -1,5 +1,5 @@
 import { CurrentDate } from "../CurrentDate";
-import Legend from "./Legend";
+import StyledLegend from "./Legend";
 import Section from "./Section";
 import Options from "./Options";
 import Result from "./Result";
@@ -79,7 +79,9 @@ const Form = () => {
    return (
       <StyledForm onSubmit={onFormSubmit}>
          <Contents>
-            <Legend title={"Kalkulator walutowy"} />
+            <StyledLegend>
+               Kalkulator walutowy
+            </StyledLegend>
             <CurrentDate />
             <Section
                title={"Kwota :"}
@@ -130,7 +132,9 @@ const Form = () => {
             />
             <Button>Przelicz</Button>
             <Rates />
-            <Legend title={<footer>Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli nr&nbsp;209/A/NBP/2023 z&nbsp;dnia&nbsp;2023-10-27</footer>} />
+            <StyledLegend>
+               Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli nr&nbsp;209/A/NBP/2023 z&nbsp;dnia&nbsp;2023-10-27
+            </StyledLegend>
          </Contents>
       </StyledForm>
    )
