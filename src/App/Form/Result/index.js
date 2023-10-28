@@ -16,5 +16,4 @@ const Result = ({ result, resultOutdated }) => (
    </Container>
 );
 
-
 export default Result;
