@@ -29,7 +29,7 @@ export const Input = styled.input`
    text-align: right;
    margin-bottom: 10px;
 
-   @media(max-width: ${({ theme }) => theme.breakpoint.mobileMin}px){
+   @media(max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
       width: 100%;
    }
 `;
