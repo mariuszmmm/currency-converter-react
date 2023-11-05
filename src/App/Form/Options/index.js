@@ -1,4 +1,4 @@
-import { currencies } from "../../currencies";
+import { currencies } from "../currencies";
 
 const Options = () => {
    return (
