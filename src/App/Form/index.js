@@ -1,14 +1,14 @@
 import { CurrentDate } from "../CurrentDate";
-import StyledLegend from "./Legend";
+import StyledLegend from "../Legend";
 import Section from "./Section";
 import Options from "./Options";
 import Result from "./Result";
 import Rates from "./Rates";
-import { StyledForm, Contents, Input, Button, Flags } from "./styled";
+import { StyledForm, Contents } from "../styled";
+import { Input, Select, Button, Flags } from "./styled";
 import { useForm } from "./useForm";
 
-const Form = () => {
-
+const Form = ({data}) => {
    const {
       amount,
       currencyInput,
@@ -22,8 +22,7 @@ const Form = () => {
       onAmountClick,
       onInputChange,
       onOutputChange
-   } = useForm();
-
+   } = useForm(data);
 
    return (
       <StyledForm onSubmit={onFormSubmit}>
@@ -51,13 +50,13 @@ const Form = () => {
                title={"Przelicz z :"}
                body={
                   <Flags flag={flagInput}>
-                     <Input as="select"
+                     <Select as="select"
                         name="currencyInput"
                         value={currencyInput}
                         onChange={onInputChange}
                      >
-                        <Options />
-                     </Input>
+                        <Options data={data} />
+                     </Select>
                   </Flags>
                }
             />
@@ -65,13 +64,13 @@ const Form = () => {
                title={"Przelicz na :"}
                body={
                   <Flags flag={flagOutput}>
-                     <Input as="select"
+                     <Select as="select"
                         name="currencyOutput"
                         value={currencyOutput}
                         onChange={onOutputChange}
                      >
-                        <Options />
-                     </Input>
+                        <Options data={data} />
+                     </Select>
                   </Flags>
                }
             />
@@ -80,9 +79,10 @@ const Form = () => {
                resultOutdated={resultOutdated}
             />
             <Button>Przelicz</Button>
-            <Rates />
+            <Rates data={data} currencyOutput={currencyOutput} />
             <StyledLegend>
-               Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli nr&nbsp;209/A/NBP/2023 z&nbsp;dnia&nbsp;2023-10-27
+               Kursy pochodzą ze strony currencyapi.com z&nbsp;dnia&nbsp;
+               {new Date(data.updateDate).toLocaleDateString()}
             </StyledLegend>
          </Contents>
       </StyledForm>

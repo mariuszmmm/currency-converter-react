@@ -1,19 +1,29 @@
-import { Container } from "./styled"
+import { Container, AmountInfo, ResultInfo } from "./styled"
 
-const resultText = (result) => `${Number((result.exchangeResult).toFixed(2)).toLocaleString("pl-PL", { minimumFractionDigits: 2 })}`;
+const resultText = (number) => `${Number((number).toFixed(2)).toLocaleString("pl-PL", { minimumFractionDigits: 2 })}`;
 
 const Result = ({ result, resultOutdated }) => (
-   <Container
-      outdated={resultOutdated}
-   >
-      {result && (
-         <>
-            {resultText(result)}
-            &nbsp;
-            {result.unit}
-         </>
-      )}
-   </Container>
+
+   <Container outdated={resultOutdated}>
+      <AmountInfo>
+         {result && (
+            <>
+               {resultText(Number(result.amount))}
+               &nbsp;&nbsp;
+               {result.currencyInputSign}&nbsp;=
+            </>
+         )}
+      </AmountInfo>
+      <ResultInfo>
+         {result && (
+            <>
+               {resultText(result.exchangeResult)}
+               &nbsp;&nbsp;
+               {result.currencyOutputSign}
+            </>
+         )}
+      </ResultInfo>
+   </Container >
 );
 
 export default Result;

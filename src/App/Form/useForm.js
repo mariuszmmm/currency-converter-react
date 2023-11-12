@@ -1,87 +1,84 @@
 import { useState, useEffect } from "react";
-import { currencies } from "./currencies";
 
+export const useForm = ({ currenciesData }) => {
+   const [amount, setAmount] = useState("");
+   const [currencyInput, setCurrencyInput] = useState(currenciesData["PLN"].symbol);
+   const [currencyOutput, setCurrencyOutput] = useState(currenciesData["EUR"].symbol);
+   const [lastDiferentInput, setLastDiferentInput] = useState(currenciesData["PLN"].symbol);
+   const [lastDiferentOutput, setLastDiferentOutput] = useState(currenciesData["EUR"].symbol);
+   const [result, setResult] = useState();
+   const [resultOutdated, setResultOutdated] = useState(false);
 
-export const useForm = () => {
-  const [amount, setAmount] = useState("");
-  const [currencyInput, setCurrencyInput] = useState(currencies[0].symbol);
-  const [currencyOutput, setCurrencyOutput] = useState(currencies[1].symbol);
-  const [lastDiferentInput, setLastDiferentInput] = useState(currencies[0].symbol);
-  const [lastDiferentOutput, setLastDiferentOutput] = useState(currencies[1].symbol);
-  const [result, setResult] = useState();
-  const [resultOutdated, setResultOutdated] = useState(false);
+   useEffect(() => {
 
-  const calculateResult = (currencyInput, currencyOutput, amount) => {
+      if (currencyInput === currencyOutput || currencyInput !== "PLN" && currencyOutput !== "PLN") {
+         if (lastDiferentInput === currencyInput) { setCurrencyInput(lastDiferentOutput) };
+         if (lastDiferentOutput === currencyOutput) { setCurrencyOutput(lastDiferentInput) }
+      }
 
-     const rateInput = currencies
-        .find(({ symbol }) => symbol === currencyInput)
-        .rate;
+      if (currencyInput !== currencyOutput && currencyInput === "PLN" || currencyOutput === "PLN") {
+         setLastDiferentInput(currencyInput);
+         setLastDiferentOutput(currencyOutput);
+      };
 
-     const rateOutput = currencies
-        .find(({ symbol }) => symbol === currencyOutput)
-        .rate;
+      setResultOutdated(true);
+   }, [currencyInput, currencyOutput]);
 
-     const unit = currencies
-        .find(({ symbol }) => symbol === currencyOutput)
-        .unit;
+   const calculateResult = (currencyInput, currencyOutput, amount) => {
 
-     setResult({
-        exchangeResult: amount * rateInput / rateOutput,
-        unit,
-     })
-  };
+      const rateInput = currenciesData[currencyInput].rate;
 
-  const flagInput = currencies
-     .find(({ symbol }) => symbol === currencyInput)
-     .flag;
+      const rateOutput = currenciesData[currencyOutput].rate;
 
-  const flagOutput = currencies
-     .find(({ symbol }) => symbol === currencyOutput)
-     .flag;
+      const currencyInputSign = currenciesData[currencyInput].symbol && currenciesData[currencyInput].unit;
 
-  const onFormSubmit = (event) => {
-     event.preventDefault();
-     calculateResult(currencyInput, currencyOutput, amount);
-     setResultOutdated(false);
-  };
+      const currencyOutputSign = currenciesData[currencyOutput].symbol && currenciesData[currencyOutput].unit;
 
-  useEffect(() => {
-     if (currencyInput === currencyOutput && lastDiferentOutput) {
-        setCurrencyOutput(lastDiferentInput);
-     };
-     if (currencyInput === currencyOutput && lastDiferentInput) {
-        setCurrencyInput(lastDiferentOutput);
-     };
-     if (currencyInput !== currencyOutput) {
-        setLastDiferentInput(currencyInput);
-        setLastDiferentOutput(currencyOutput);
-     };
-     setResultOutdated(true);
-  }, [amount, currencyInput, currencyOutput, lastDiferentInput, lastDiferentOutput]);
+      // const currencyInputUnit = currenciesData[currencyInput].unit;
 
-  const onAmountChange = ({ target }) => {
-     if (isNaN(target.value) || target.value > 999999999) return;
-     setAmount(target.value);
-  };
+      // const currencyOutputUnit = currenciesData[currencyOutput].unit;
 
-  const onAmountClick = () => setAmount("");
+      setResult({
+         exchangeResult: amount * rateOutput / rateInput,
+         currencyInputSign,
+         currencyOutputSign,
+         amount
+      })
+   };
 
-  const onInputChange = ({ target }) => setCurrencyInput(target.value);
+   const flagInput = currenciesData[currencyInput].flag;
 
-  const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
+   const flagOutput = currenciesData[currencyOutput].flag;
 
-  return {
-    amount,
-    currencyInput,
-    currencyOutput,
-    result,
-    resultOutdated,
-    flagInput,
-    flagOutput,
-    onFormSubmit,
-    onAmountChange,
-    onAmountClick,
-    onInputChange,
-    onOutputChange
-  };
+   const onFormSubmit = (event) => {
+      event.preventDefault();
+      calculateResult(currencyInput, currencyOutput, amount);
+      setResultOutdated(false);
+   };
+
+   const onAmountChange = ({ target }) => {
+      if (isNaN(target.value) || target.value > 999999999) return;
+      setAmount(target.value);
+   };
+
+   const onAmountClick = () => setAmount("");
+
+   const onInputChange = ({ target }) => setCurrencyInput(target.value);
+
+   const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
+
+   return {
+      amount,
+      currencyInput,
+      currencyOutput,
+      result,
+      resultOutdated,
+      flagInput,
+      flagOutput,
+      onFormSubmit,
+      onAmountChange,
+      onAmountClick,
+      onInputChange,
+      onOutputChange
+   };
 };

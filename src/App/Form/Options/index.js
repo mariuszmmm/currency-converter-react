@@ -1,15 +1,16 @@
-import { currencies } from "../currencies";
+const Options = ({ data }) => {
 
-const Options = () => {
    return (
-      currencies.map(currency => (
+      Object.values(data.currenciesData).map((currency) =>
          <option
             key={currency.symbol}
             value={currency.symbol}
          >
-            {currency.name} / {currency.symbol}
+            {currency.currency ? 
+            currency.currency.length > 17 ? 
+            `${currency.currency.slice(0, 17)}.../` : `${currency.currency} /`: ""} {currency.symbol}
          </option>
-      ))
+      )
    )
 };
 
