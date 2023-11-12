@@ -6,7 +6,7 @@ const StyledLegend = styled.legend`
    padding: 10px 20px;
    border-radius: 5px;
    border: black 3px solid;
-   margin-top: 15px;
+   margin: 15px 0;
 `;
 
 export default StyledLegend;
