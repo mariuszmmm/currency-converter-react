@@ -1,28 +1,10 @@
 import styled from "styled-components";
 
-export const StyledForm = styled.form`
-   max-width: 560px;
-   min-width: 300px;
-   margin: 0 auto;
-`;
-
-export const Contents = styled.fieldset`
-   background: ${({ theme }) => theme.color.white};
-   color: ${({ theme }) => theme.color.black};
-   border: solid 3px ${({ theme }) => theme.color.black};
-   padding: 10px 5%;
-   border-radius: 5px;
-   margin: 20px 0px;
-   box-shadow: 0px 0px 50px 20px ${({ theme }) => theme.color.black};
-   margin-right: calc(+10px);
-   margin-left: calc(+10px);
-`;
-
 export const Input = styled.input`
    background: ${({ theme }) => theme.color.white};
    color: ${({ theme }) => theme.color.black};
    border: 1px solid ${({ theme }) => theme.color.Silver};
-   padding: 5px 10px;
+   padding: 5px 12px;
    min-width: 190px;
    width: 60%;
    border-radius: 5px;
@@ -33,6 +15,10 @@ export const Input = styled.input`
    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
       width: 100%;
    }
+`;
+
+export const Select = styled(Input)`
+padding-right: 0;
 `;
 
 export const Button = styled.button`
@@ -64,15 +50,16 @@ export const Flags = styled.span`
    &::after {
       background-image: url(${({ flag }) => flag});
       background-position: center;
-      box-shadow: 4px 4px 6px rgb(0 0 0 / 90%);
+      box-shadow: ${({ flag }) => flag ? `4px 4px 6px rgb(0 0 0 / 90%)` : null};
       content: '';
       height: 20px;
       left: 10px;
       top: 0;
       bottom: 0;
       margin: auto 0;
-      width: 35px;
+      width: 28px;
       position: absolute;
       transition: 0.2s;
+      
    }
 `;
