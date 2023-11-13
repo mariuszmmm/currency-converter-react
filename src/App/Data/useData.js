@@ -1,22 +1,67 @@
 import { ratesUrl, currenciesMetaDataUrl, flagUrlPatern } from "./api";
-import { useEffect, useState } from "react";
 import getSymbolFromCurrency from 'currency-symbol-map'
+import { useEffect, useState } from "react";
+
 
 export const useData = () => {
   const [data, setData] = useState({
-    updateDate: null,
-    currenciesData: {},
     stateData: "loading",
+    stateError: false,
+    currentData: null,
+    oldData: null,
   });
 
-  // const saveToLocalStorage = (name, data) => {
-  //   localStorage.setItem(name, JSON.stringify(data));
-  // }
+  useEffect(() => {
+    const localstorage = localStorage.getItem('currenciesData');
+
+    if (localstorage && data.stateData === "loading") {
+      const localstorage = localStorage.getItem('currenciesData')
+      const localData = JSON.parse(localstorage);
+
+      setData({ ...data, oldData: localData })
+    }
+  }, []);
 
   useEffect(() => {
+    const localstorage = localStorage.getItem('currenciesData');
+
+    if (!localstorage && data.stateData === "ok") {
+      const toLocalStore = {
+        currenciesData: data.currentData.currenciesData,
+        updateDate: data.currentData.updateDate,
+      }
+      localStorage.setItem("currenciesData", JSON.stringify(toLocalStore))
+    }
+  }, [data.stateData]);
+
+  useEffect(() => {
+    const localstorage = localStorage.getItem('currenciesData');
+
+    if (data.stateError) {
+      setData(localstorage ? { ...data, stateData: "error" } : { ...data, stateData: null })
+    }
+
+  }, [data.stateError]);
+
+  const updateData = (updateDate, currenciesData) => {
+    setData(prevData => ({
+      ...prevData,
+      stateData: "ok",
+      currentData: { updateDate, currenciesData }
+    }));
+  };
+
+  const updateDataError = () => {
+    setData(prevData => ({
+      ...prevData, stateError: true
+    }))
+  };
+
+
+  useEffect(() => {
+
     const newData = (rates, metadata) => {
       const updateDate = rates.meta.last_updated_at;
-
       const ratesData = {};
       for (const key in rates.data) {
         ratesData[key] =
@@ -53,39 +98,48 @@ export const useData = () => {
         }
       };
 
-      setData({
-        ...data,
-        updateDate,
-        currenciesData,
-        stateData: "ok",
-      });
+      updateData(updateDate, currenciesData);
     };
 
-    setTimeout(() => {
-      const fetchcurrenciesData = fetch(ratesUrl)
-        .then((response) => response.json())
+    const setTimeoutId = setTimeout(() => {
+      const fetchJsonData = (url) => fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(response.statusText);
+          }
+          return response;
+        })
+        .then((response) => response.json());
 
-      const fetchMetadata = fetch(currenciesMetaDataUrl)
-        .then((response) => response.json())
+      const fetchcurrenciesData = fetchJsonData(ratesUrl);
+      const fetchMetadata = fetchJsonData(currenciesMetaDataUrl);
 
       Promise.all([fetchcurrenciesData, fetchMetadata])
-        .then(data => {
+        .then((data) => {
           const rates = data[0];
           const metadata = data[1];
+
           return newData(rates, metadata);
         })
-        .catch((error) => {
-          console.error("BŁĄD", error)
-          setData({
-            ...data, stateData: "error"
-          })
-        });
+        .catch((err) => {
+          console.error("BŁĄD", err)
 
-    }, 1000)
+          updateDataError();
+        })
+    }, 2000)
+
+    return () => {
+      clearTimeout(setTimeoutId);
+    };
+
   }, []);
 
-  // console.log("data", data)
-  return data
-};
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    setData({ ...data, stateData: "fromCopy" })
+    console.log("onFormSubmit")
+  };
 
+  return { data, onFormSubmit, }
+};
 

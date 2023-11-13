@@ -1,12 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const StyledLegend = styled.legend`
+export const StyledLegend = styled.legend`
    background-color: ${({ theme }) => theme.color.prussianBlue};
    color: ${({ theme }) => theme.color.white};
+   width: 100%;
    padding: 10px 20px;
    border-radius: 5px;
    border: black 3px solid;
    margin: 15px 0;
-`;
+   background-color: ${({ theme }) => theme.color.prussianBlue};
 
-export default StyledLegend;
+   ${({ error }) => error && css`
+      background-color: ${({ theme }) => theme.color.red};
+   `};
+
+   ${({ title }) => title && css`
+   width: auto;
+   `}
+`;

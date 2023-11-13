@@ -1,25 +1,18 @@
 import { CurrentDate } from "../CurrentDate";
+import { StyledLegend } from "../Legend";
 import { StyledForm, Contents } from "../styled";
-import StyledLegend from "../Legend";
 
-const Data = ({ stateData }) => {
+export const Data = ({ children, onFormSubmit }) => {
 
-   return (
-      <StyledForm >
-         <Contents>
-            <StyledLegend>
-               Kalkulator walutowy
-            </StyledLegend>
-            <CurrentDate />
-            <StyledLegend>
-               {stateData === "loading" ?
-                  "Trwa ładowanie danych ..."
-                  :
-                  "Wystąpił błąd, spróbuj póżniej"}
-            </StyledLegend>
-         </Contents>
-      </StyledForm>
-   )
+  return (
+    <StyledForm onSubmit={onFormSubmit} >
+      <Contents>
+        <StyledLegend title="true" >
+          Kalkulator walutowy
+        </StyledLegend>
+        <CurrentDate />
+        {children}
+      </Contents>
+    </StyledForm >
+  )
 };
-
-export default Data;

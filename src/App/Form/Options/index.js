@@ -6,9 +6,12 @@ const Options = ({ data }) => {
             key={currency.symbol}
             value={currency.symbol}
          >
-            {currency.currency ? 
-            currency.currency.length > 17 ? 
-            `${currency.currency.slice(0, 17)}.../` : `${currency.currency} /`: ""} {currency.symbol}
+            {window.innerWidth > 570 && currency.currency
+               ?
+               `${currency.currency} / ${currency.symbol}`
+               :
+               `${currency.symbol}`
+            }
          </option>
       )
    )

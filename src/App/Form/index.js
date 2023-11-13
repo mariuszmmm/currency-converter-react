@@ -1,14 +1,14 @@
 import { CurrentDate } from "../CurrentDate";
-import StyledLegend from "../Legend";
+import { StyledLegend } from "../Legend";
 import Section from "./Section";
 import Options from "./Options";
 import Result from "./Result";
 import Rates from "./Rates";
-import { StyledForm, Contents } from "../styled";
-import { Input, Select, Button, Flags } from "./styled";
+import { StyledForm, Contents, Button } from "../styled";
+import { Input, Select, Flags } from "./styled";
 import { useForm } from "./useForm";
 
-const Form = ({data}) => {
+export const Form = ({ data }) => {
    const {
       amount,
       currencyInput,
@@ -27,7 +27,7 @@ const Form = ({data}) => {
    return (
       <StyledForm onSubmit={onFormSubmit}>
          <Contents>
-            <StyledLegend>
+            <StyledLegend title="true">
                Kalkulator walutowy
             </StyledLegend>
             <CurrentDate />
@@ -89,4 +89,3 @@ const Form = ({data}) => {
    )
 };
 
-export default Form;
