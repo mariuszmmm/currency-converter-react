@@ -8,7 +8,7 @@ const Rates = ({ data, currencyOutput }) => {
    return (
       Object.values(currenciesData).map((currency) => (
          <Section key={currency.symbol}
-            title={`Kurs ${currency.symbol} :`}
+            title={`Kurs ${currency.symbol}/PLN :`}
             body={
                <Flags flag={currency.flag}>
                   <Input
