@@ -3,6 +3,7 @@ import { Button } from "./styled";
 import { useData } from "./Data/useData";
 import { Form } from './Form';
 import { Data } from './Data';
+import { Loading } from "./Loading"
 
 const App = () => {
   const { data, onFormSubmit } = useData();
@@ -17,13 +18,13 @@ const App = () => {
         <Data onFormSubmit={onFormSubmit}>
           <StyledLegend error={data.stateError}>
             {data.stateData === "loading" ?
-              <p>Trwa ładowanie danych ...</p>
+              <p>Trwa ładowanie danych <Loading /></p>
               :
               data.stateData === "error" ?
                 <>
                   <p>Wystąpił błąd przy pobieraniu danych.</p>
-                  <p>Czy chcesz użyć kopi z dnia
-                    {new Date(data.oldData.updateDate).toLocaleDateString()}?
+                  <p>Czy chcesz użyć kopi z&nbsp;
+                    {new Date(data.oldData.date).toLocaleDateString()}r&nbsp;?
                   </p>
                   <Button> OK </Button>
                 </>
