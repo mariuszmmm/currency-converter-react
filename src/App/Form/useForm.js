@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 export const useForm = ({ currenciesData }) => {
+
   const [amount, setAmount] = useState("");
   const [currencyInput, setCurrencyInput] = useState(currenciesData["PLN"].symbol);
   const [currencyOutput, setCurrencyOutput] = useState(currenciesData["EUR"].symbol);
@@ -8,31 +9,28 @@ export const useForm = ({ currenciesData }) => {
   const [lastDiferentOutput, setLastDiferentOutput] = useState(currenciesData["EUR"].symbol);
   const [result, setResult] = useState();
   const [resultOutdated, setResultOutdated] = useState(false);
-  // console.log(currenciesData);
+
   useEffect(() => {
 
-    if (currencyInput === currencyOutput || currencyInput !== "PLN" && currencyOutput !== "PLN") {
+    if ((currencyInput === currencyOutput) || (currencyInput !== "PLN" && currencyOutput !== "PLN")) {
       if (lastDiferentInput === currencyInput) { setCurrencyInput(lastDiferentOutput) };
       if (lastDiferentOutput === currencyOutput) { setCurrencyOutput(lastDiferentInput) }
     }
 
-    if (currencyInput !== currencyOutput && currencyInput === "PLN" || currencyOutput === "PLN") {
+    if ((currencyInput !== currencyOutput) && (currencyInput === "PLN" || currencyOutput === "PLN")) {
       setLastDiferentInput(currencyInput);
       setLastDiferentOutput(currencyOutput);
     };
 
     setResultOutdated(true);
-  }, [currencyInput, currencyOutput]);
+  }, [currencyInput, currencyOutput, lastDiferentInput, lastDiferentOutput]);
 
   const calculateResult = (currencyInput, currencyOutput, amount) => {
 
     const rateInput = currenciesData[currencyInput].rate;
     const rateOutput = currenciesData[currencyOutput].rate;
-    const currencyInputSign = currenciesData[currencyInput].symbol && currenciesData[currencyInput].unit;
-    const currencyOutputSign = currenciesData[currencyOutput].symbol && currenciesData[currencyOutput].unit;
-
-    // const currencyInputUnit = currenciesData[currencyInput].unit;
-    // const currencyOutputUnit = currenciesData[currencyOutput].unit;
+    const currencyInputSign = currenciesData[currencyInput].unit || currenciesData[currencyInput].symbol;
+    const currencyOutputSign = currenciesData[currencyOutput].unit || currenciesData[currencyOutput].symbol;
 
     setResult({
       exchangeResult: amount * rateOutput / rateInput,
@@ -52,11 +50,11 @@ export const useForm = ({ currenciesData }) => {
   };
 
   const onAmountChange = ({ target }) => {
-    if (isNaN(target.value) || target.value > 999999999) return;
+    if (target.value > 999999999) return;
     setAmount(target.value);
+    setResultOutdated(true);
   };
 
-  const onAmountClick = () => setAmount("");
   const onInputChange = ({ target }) => setCurrencyInput(target.value);
   const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
 
@@ -70,7 +68,6 @@ export const useForm = ({ currenciesData }) => {
     flagOutput,
     onFormSubmit,
     onAmountChange,
-    onAmountClick,
     onInputChange,
     onOutputChange
   };

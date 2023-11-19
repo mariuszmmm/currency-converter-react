@@ -1,19 +1,20 @@
-import { useEffect } from "react";
-import Section from "../Section";
-import { Input, Flags } from "../styled";
+import { Section } from "../Section";
+import { Input } from "../styled";
+import { Flags } from "../Flags";
 
-const Rates = ({ data, currencyOutput }) => {
+export const Rates = ({ data, currencyOutput }) => {
    const { PLN, ...currenciesData } = data.currenciesData;
+   const sortedCurrenciesData = Object.values(currenciesData).sort((a, b) => a.symbol.localeCompare(b.symbol))
 
    return (
-      Object.values(currenciesData).map((currency) => (
-         <Section key={currency.symbol}
-            title={`Kurs ${currency.symbol}/PLN :`}
+      sortedCurrenciesData.map((object) => (
+         <Section key={object.symbol}
+            title={currencyOutput === "PLN" ? `${object.symbol} / PLN :` : `PLN / ${object.symbol} :`}
             body={
-               <Flags flag={currency.flag}>
-                  <Input
+               <Flags flag={object.flag}>
+                  <Input rate="true"
                      name="rate"
-                     value={currencyOutput === "PLN" ? (1 / currency.rate).toFixed(6) : currency.rate.toFixed(6)}
+                     value={currencyOutput === "PLN" ? ((1 / object.rate).toFixed(4)).toString().replace('.', ',') : (object.rate.toFixed(4)).toString().replace('.', ',')}
                      disabled
                   />
                </Flags>
@@ -22,5 +23,3 @@ const Rates = ({ data, currencyOutput }) => {
       ))
    )
 };
-
-export default Rates;
