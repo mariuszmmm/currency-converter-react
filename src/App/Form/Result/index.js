@@ -2,7 +2,7 @@ import { Container, AmountInfo, ResultInfo } from "./styled"
 
 const resultText = (number) => `${Number((number).toFixed(2)).toLocaleString("pl-PL", { minimumFractionDigits: 2 })}`;
 
-const Result = ({ result, resultOutdated }) => (
+export const Result = ({ result, resultOutdated }) => (
 
    <Container outdated={resultOutdated}>
       <AmountInfo>
@@ -25,5 +25,3 @@ const Result = ({ result, resultOutdated }) => (
       </ResultInfo>
    </Container >
 );
-
-export default Result;

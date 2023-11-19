@@ -1,11 +1,13 @@
 import { CurrentDate } from "../CurrentDate";
 import { StyledLegend } from "../Legend";
-import Section from "./Section";
-import Options from "./Options";
-import Result from "./Result";
-import Rates from "./Rates";
+import { Section } from "./Section";
+import { Options } from "./Options";
+import { Result } from "./Result";
+import { Rates } from "./Rates";
 import { StyledForm, Contents, Button } from "../styled";
-import { Input, Select, Flags } from "./styled";
+import { Input, Select } from "./styled";
+import { Flags } from "./Flags";
+
 import { useForm } from "./useForm";
 
 export const Form = ({ data }) => {
@@ -19,7 +21,6 @@ export const Form = ({ data }) => {
       flagOutput,
       onFormSubmit,
       onAmountChange,
-      onAmountClick,
       onInputChange,
       onOutputChange
    } = useForm(data);
@@ -38,8 +39,7 @@ export const Form = ({ data }) => {
                      name="amount"
                      value={amount}
                      onChange={onAmountChange}
-                     onClick={onAmountClick}
-                     type="text"
+                     type="number"
                      placeholder=" Wpisz kwotę "
                      required
                      autoFocus
@@ -81,8 +81,8 @@ export const Form = ({ data }) => {
             <Button>Przelicz</Button>
             <Rates data={data} currencyOutput={currencyOutput} />
             <StyledLegend>
-               Kursy pochodzą ze strony currencyapi.com z&nbsp;dnia&nbsp;
-               {new Date(data.updateDate).toLocaleDateString()}
+               Kursy pochodzą ze strony nbp.pl z&nbsp;tabeli&nbsp;nr&nbsp;{data.number} z&nbsp;dnia&nbsp;
+               {new Date(data.date).toLocaleDateString()}
             </StyledLegend>
          </Contents>
       </StyledForm>
