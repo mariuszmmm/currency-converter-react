@@ -18,11 +18,11 @@ export const Container = styled.div`
 
 export const AmountInfo = styled.p`
    margin: 10px 0;
-   font-size: 25px;
+   font-size: 20px;
    color: ${({ theme }) => theme.color.black};
 `;
 
 export const ResultInfo = styled(AmountInfo)`
-   font-size: 30px;
+   font-size: 35px;
    color: ${({ theme }) => theme.color.red};
 `;
