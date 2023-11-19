@@ -4,12 +4,12 @@ import { Flags } from "../Flags";
 
 export const Rates = ({ data, currencyOutput }) => {
    const { PLN, ...currenciesData } = data.currenciesData;
-   const sortedCurrenciesData = Object.values(currenciesData).sort((a, b) => a.symbol.localeCompare(b.symbol))
+   const sortedCurrenciesData = Object.values(currenciesData).sort((a, b) => a.code.localeCompare(b.code))
 
    return (
       sortedCurrenciesData.map((object) => (
-         <Section key={object.symbol}
-            title={currencyOutput === "PLN" ? `${object.symbol} / PLN :` : `PLN / ${object.symbol} :`}
+         <Section key={object.code}
+            title={currencyOutput === "PLN" ? `${object.code} / PLN :` : `PLN / ${object.code} :`}
             body={
                <Flags flag={object.flag}>
                   <Input rate="true"

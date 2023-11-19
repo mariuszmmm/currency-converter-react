@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 export const useForm = ({ currenciesData }) => {
 
   const [amount, setAmount] = useState("");
-  const [currencyInput, setCurrencyInput] = useState(currenciesData["PLN"].symbol);
-  const [currencyOutput, setCurrencyOutput] = useState(currenciesData["EUR"].symbol);
-  const [lastDiferentInput, setLastDiferentInput] = useState(currenciesData["PLN"].symbol);
-  const [lastDiferentOutput, setLastDiferentOutput] = useState(currenciesData["EUR"].symbol);
+  const [currencyInput, setCurrencyInput] = useState(currenciesData["PLN"].code);
+  const [currencyOutput, setCurrencyOutput] = useState(currenciesData["EUR"].code);
+  const [lastDiferentInput, setLastDiferentInput] = useState(currenciesData["PLN"].code);
+  const [lastDiferentOutput, setLastDiferentOutput] = useState(currenciesData["EUR"].code);
   const [result, setResult] = useState();
   const [resultOutdated, setResultOutdated] = useState(false);
 
@@ -29,11 +29,11 @@ export const useForm = ({ currenciesData }) => {
 
     const rateInput = currenciesData[currencyInput].rate;
     const rateOutput = currenciesData[currencyOutput].rate;
-    const currencyInputSign = currenciesData[currencyInput].unit || currenciesData[currencyInput].symbol;
-    const currencyOutputSign = currenciesData[currencyOutput].unit || currenciesData[currencyOutput].symbol;
+    const currencyInputSign = currenciesData[currencyInput].symbol || currenciesData[currencyInput].code;
+    const currencyOutputSign = currenciesData[currencyOutput].symbol || currenciesData[currencyOutput].code;
 
     setResult({
-      exchangeResult: amount * rateOutput / rateInput,
+      exchangeResult: amount * rateInput / rateOutput,
       currencyInputSign,
       currencyOutputSign,
       amount

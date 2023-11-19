@@ -51,7 +51,7 @@ export const useData = () => {
         rates[key] =
         {
           rate: objectRates[key].mid,
-          symbol: objectRates[key].code,
+          code: objectRates[key].code,
           currency: objectRates[key].currency
         };
       };
@@ -59,7 +59,7 @@ export const useData = () => {
       const baseRate = {
         PLN: {
           rate: 1,
-          symbol: "PLN",
+          code: "PLN",
           currency: "złoty"
         }
       };
@@ -67,14 +67,14 @@ export const useData = () => {
       const ratesFull = { ...rates, ...baseRate };
       const keys = Object.keys(ratesFull);
 
-      const units = {};
+      const symbols = {};
       for (const key of keys) {
-        units[key] = { unit: getSymbolFromCurrency(key) }
+        symbols[key] = { symbol: getSymbolFromCurrency(key) }
       };
 
       const flagsUrl = {};
       for (const key of keys) {
-        const iso3166 = (ratesFull[key].symbol).slice(0, -1);
+        const iso3166 = (ratesFull[key].code).slice(0, -1);
         const url = (flagUrlPatern.replace("{iso3166}", iso3166)).toLowerCase();
 
         flagsUrl[key] = ["XDR"].includes(key) ? { flag: null } : { flag: url };
@@ -84,7 +84,7 @@ export const useData = () => {
       for (const key of keys) {
         currenciesData[key] = {
           ...ratesFull[key],
-          ...units[key],
+          ...symbols[key],
           ...flagsUrl[key]
         }
       };
@@ -126,6 +126,6 @@ export const useData = () => {
     setData({ ...data, stateData: "fromCopy" })
   };
 
-  return { data, onFormSubmit, }
+  return { data, onFormSubmit }
 };
 

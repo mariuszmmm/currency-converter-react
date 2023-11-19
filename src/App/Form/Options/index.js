@@ -1,21 +1,20 @@
 export const Options = ({ data }) => {
    const dataSortedByCurrency = Object.values(data.currenciesData).sort((a, b) => a.currency.localeCompare(b.currency))
-   const dataSortedBySymbol = Object.values(data.currenciesData).sort((a, b) => a.symbol.localeCompare(b.symbol))
+   const dataSortedByCode = Object.values(data.currenciesData).sort((a, b) => a.code.localeCompare(b.code))
    const windowFull = window.innerWidth > 700 ? true : false;
-   console.log(window.innerWidth)
-   const currencies = windowFull ? dataSortedByCurrency : dataSortedBySymbol
+   const currencies = windowFull ? dataSortedByCurrency : dataSortedByCode
 
    return (
       currencies.map((currency) =>
          <option
-            key={currency.symbol}
-            value={currency.symbol}
+            key={currency.code}
+            value={currency.code}
          >
             {windowFull && currency.currency
                ?
-               `${currency.currency} / ${currency.symbol}`
+               `${currency.currency} / ${currency.code}`
                :
-               `${currency.symbol}`
+               `${currency.code}`
             }
          </option>
       )
