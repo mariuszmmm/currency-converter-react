@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 export const useForm = ({ currenciesData }) => {
-
   const [amount, setAmount] = useState("");
   const [currencyInput, setCurrencyInput] = useState(currenciesData["PLN"].code);
   const [currencyOutput, setCurrencyOutput] = useState(currenciesData["EUR"].code);
@@ -11,7 +10,6 @@ export const useForm = ({ currenciesData }) => {
   const [resultOutdated, setResultOutdated] = useState(false);
 
   useEffect(() => {
-
     if ((currencyInput === currencyOutput) || (currencyInput !== "PLN" && currencyOutput !== "PLN")) {
       if (lastDiferentInput === currencyInput) { setCurrencyInput(lastDiferentOutput) };
       if (lastDiferentOutput === currencyOutput) { setCurrencyOutput(lastDiferentInput) }
@@ -26,7 +24,6 @@ export const useForm = ({ currenciesData }) => {
   }, [currencyInput, currencyOutput, lastDiferentInput, lastDiferentOutput]);
 
   const calculateResult = (currencyInput, currencyOutput, amount) => {
-
     const rateInput = currenciesData[currencyInput].rate;
     const rateOutput = currenciesData[currencyOutput].rate;
     const currencyInputSign = currenciesData[currencyInput].symbol || currenciesData[currencyInput].code;
