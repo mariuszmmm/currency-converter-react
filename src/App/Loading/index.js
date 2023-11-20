@@ -13,5 +13,7 @@ export const Loading = () => {
     };
   }, [load]);
 
-  return <span>{load}</span>;
+  return (
+    <p>Trwa ładowanie danych {load}</p>
+  );
 };
