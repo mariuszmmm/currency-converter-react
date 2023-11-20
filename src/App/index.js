@@ -1,38 +1,31 @@
-import { StyledLegend } from "./Legend";
-import { Button } from "./styled";
+import { StyledLegend } from "./styled";
 import { useData } from "./Data/useData";
 import { Form } from './Form';
 import { Data } from './Data';
 import { Loading } from "./Loading"
+import { Error } from "./Error"
 
 const App = () => {
-  const { data, onFormSubmit } = useData();
+  const {
+    data: { stateData, stateError, currentData, oldData }, onFormSubmit
+  } = useData();
 
   return (
     <>
-      {data.stateData === "ok" || data.stateData === "fromCopy" ?
+      {["ok", "fromCopy"].includes(stateData) ?
         <Form
-          data={data.stateData === "ok" ? data.currentData : data.oldData}
+          data={stateData === "ok" ? currentData : oldData}
         />
         :
         <Data onFormSubmit={onFormSubmit}>
-          <StyledLegend error={data.stateError}>
-            {data.stateData === "loading" ?
-              <p>Trwa ładowanie danych <Loading /></p>
+          <StyledLegend error={stateError}>
+            {stateData === "loading" ?
+              <Loading />
               :
-              data.stateData === "error" ?
-                <>
-                  <p>Wystąpił błąd przy pobieraniu danych.</p>
-                  <p>Czy chcesz użyć kopi z&nbsp;
-                    {new Date(data.oldData.date).toLocaleDateString()}r&nbsp;?
-                  </p>
-                  <Button> OK </Button>
-                </>
+              stateData === "error" ?
+                <Error oldData={oldData}/>
                 :
-                <>
-                  <p>Niestety wystąpił błąd pobierania danych.</p>
-                  <p>Spróbuj później.</p>
-                </>
+                <Error oldData={oldData} />
             }
           </StyledLegend>
         </Data>

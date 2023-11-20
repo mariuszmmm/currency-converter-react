@@ -1,5 +1,5 @@
 import { CurrentDate } from "../CurrentDate";
-import { StyledLegend } from "../Legend";
+import { StyledLegend } from "../styled";
 import { StyledForm, Contents } from "../styled";
 
 export const Data = ({ children, onFormSubmit }) => {
