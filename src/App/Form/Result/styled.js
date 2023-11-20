@@ -6,7 +6,7 @@ export const Container = styled.div`
   font-size: 30px;
   text-align: center;
   font-weight: 700;
-  text-shadow: 1px 1px 10px ${({ theme }) => theme.color.doveGray};
+  text-shadow: 1px 1px 5px ${({ theme }) => theme.color.doveGray};
   padding: 0;
   color: ${({ theme }) => theme.color.red};
 

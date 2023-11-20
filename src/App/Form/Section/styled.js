@@ -10,4 +10,5 @@ export const Content = styled.span`
   padding: 0px 5px;
   margin: 0;
   margin-left: 2%;
+  font-weight: 700;
 `;
