@@ -52,6 +52,10 @@ export const useForm = ({ currenciesData }) => {
     setResultOutdated(true);
   };
 
+  const onAmountClick = () => {
+    if (!resultOutdated) { setAmount("") };
+  };
+
   const onInputChange = ({ target }) => setCurrencyInput(target.value);
   const onOutputChange = ({ target }) => setCurrencyOutput(target.value);
 
@@ -65,6 +69,7 @@ export const useForm = ({ currenciesData }) => {
     flagOutput,
     onFormSubmit,
     onAmountChange,
+    onAmountClick,
     onInputChange,
     onOutputChange
   };

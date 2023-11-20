@@ -20,6 +20,7 @@ export const Form = ({ data }) => {
     flagOutput,
     onFormSubmit,
     onAmountChange,
+    onAmountClick,
     onInputChange,
     onOutputChange
   } = useForm(data);
@@ -38,6 +39,7 @@ export const Form = ({ data }) => {
               name="amount"
               value={amount}
               onChange={onAmountChange}
+              onClick={onAmountClick}
               type="number"
               placeholder=" Wpisz kwotę "
               required
