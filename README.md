@@ -1,8 +1,6 @@
-  <p align="right"> *[Polski](https://mariuszmmm.github.io/currency-converter-react/)</p>&nbsp;a&nbsp;
-  
-[Dokumentacja po polsku](readme-pl.md)
-
-🌍
+<p align="right">
+  🌍 &nbsp;  <a href="README-pl.md"> polski</a>   &nbsp; angielski
+</p>
 
 # [Currency Exchange Calculator](https://mariuszmmm.github.io/currency-converter-react/)
 * [Try it Now](https://mariuszmmm.github.io/currency-converter-react/)
