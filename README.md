@@ -20,8 +20,8 @@
 <b>'Currency Exchange Calculator'</b> is an application built on the React.js library.<br>
 It allows for easy and quick currency conversion based on the current exchange rates from the National Bank of Poland (NBP).
 
-The application utilizes the fetch technology to retrieve current currency exchange rates from an external data source.<br>
-Thanks to error handling using the catch method, the application can react to situations where data retrieval fails.
+The application utilizes the 'fetch' technology to retrieve current currency exchange rates from an external data source.<br>
+Thanks to error handling using the 'catch' method, the application can react to situations where data retrieval fails.
 
 In case an error occurs while fetching the current currency exchange rates, the application automatically suggests loading the last saved rates from the local storage.<br>
 This allows users to access recently saved rates in the event of connectivity issues with an external source.
@@ -47,7 +47,7 @@ Additionally, the application is responsive, adapting seamlessly to various scre
 <br>
 
 ## Setup
-To run the program from the currency-converter-react repository on your local computer, you can follow these steps:
+To run the program from the 'currency-converter-react' repository on your local computer, you can follow these steps:
 1. <b>Downloading the source code:</b><br>
 Clone the repository from the GitHub page to your local computer using the command:
 ```commandline
