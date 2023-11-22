@@ -26,7 +26,7 @@ Thanks to error handling using the catch method, the application can react to si
 In case an error occurs while fetching the current currency exchange rates, the application automatically suggests loading the last saved rates from the local storage.<br>
 This allows users to access the most recently saved rates despite connectivity issues with the external source.
 
-Additionally, the application is responsive, adapting seamlessly to various screen sizes and devices for an enhanced user experience.
+Additionally, the application is responsive, adapting seamlessly to various screen sizes and devices.
 
 <br>
 
