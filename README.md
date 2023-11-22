@@ -1,14 +1,21 @@
+  <p align="right"> *[Polski](https://mariuszmmm.github.io/currency-converter-react/)</p>&nbsp;a&nbsp;
+  
+[Dokumentacja po polsku](readme-pl.md)
+
+🌍
+
 # [Currency Exchange Calculator](https://mariuszmmm.github.io/currency-converter-react/)
 * [Try it Now](https://mariuszmmm.github.io/currency-converter-react/)
+* [Presentation](#presentation)
 * [Description ](#description)
 * [Technologies](#technologies)
 * [Setup](#setup )
 * [Application view](#application-view)
+<br>
 
+## Presentation
+![Currency converter](public/images/presentation.gif)
 
-#
-![Currency converter](/images/presentation.gif)
-#
 <br>
 
 ## Description
@@ -63,19 +70,7 @@ After installing the dependencies, you can run the application locally. Use the 
 <br>
 
 ## Application view
-((((
-Application view (ta sekcja zawiera pliki graficzne przedstawiające wygląd/działanie utworzonej aplikacji)
-<img src=”URL” width=”50%” height=”50%”>
+The application is fully responsive and adapts to various devices.<br>
+Screenshots showcase the app's appearance on both phones and tablets, demonstrating how it responsively adjusts to screen size changes
 
-#
-![Currency converter](/images/size.png)
-#
-
-W sekcji "Application view" można umieścić zrzuty ekranu (screenshots) lub zapisy ekranu prezentujące poszczególne widoki i funkcjonalności aplikacji currency-converter-react. Można opisywać każdy z widoków wraz z ich funkcjonalnościami.
-Strona główna: Zrzut ekranu pokazujący interfejs użytkownika z miejscami na wprowadzenie kwoty oraz wybór walut.
-Przykładowa konwersja: Screenshot prezentujący wynik przeliczenia kwoty z jednej waluty na drugą.
-Responsywność: Można umieścić zrzuty ekranu prezentujące wygląd aplikacji na różnych urządzeniach - na komputerze, tablecie oraz telefonie, pokazujące responsywność interfejsu.
-Interakcje użytkownika: Jeśli istnieją interaktywne elementy, można zrobić zrzuty ekranu lub zapisy ekranu prezentujące interakcje użytkownika, takie jak wybór walut, wprowadzenie kwoty, aktualizacja wyników itp.
-Dobrze byłoby opatrzyć każdy z zrzutów ekranu krótkim opisem lub adnotacją, wyjaśniającym co jest widoczne na obrazie oraz jakie funkcje są w danym widoku dostępne. To pomaga innym użytkownikom zrozumieć, jak korzystać z aplikacji i jakie funkcje są dostępne.
-))))
-_________________________________________
+![Currency converter](public/images/size.png)
