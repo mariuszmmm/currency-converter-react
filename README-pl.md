@@ -47,8 +47,9 @@ Dodatkowo, aplikacja jest responsywna, płynnie dostosowując się do różnych 
 
 ## Konfiguracja
 Aby uruchomić program z repozytorium 'currency-converter-react' na swoim komputerze, wykonaj następujące kroki:
-<b>Pobranie kodu źródłowego:</b><br>
-1. Sklonuj repozytorium ze strony GitHub na swój komputer lokalny za pomocą polecenia:
+
+1. <b>Pobranie kodu źródłowego:</b><br>
+Sklonuj repozytorium ze strony GitHub na swój komputer lokalny za pomocą polecenia:
 ```commandline
      git clone https://github.com/mariuszmmm/currency-converter-react.git
 ```
@@ -69,6 +70,6 @@ Po zainstalowaniu zależności, możesz uruchomić aplikację lokalnie. Użyj po
 
 ## Widok aplikacji
 Aplikacja jest w pełni responsywna i dostosowuje się do różnych urządzeń.<br>
-Zrzuty ekranu prezentują wygląd aplikacji zarówno na telefonach, jak i tabletach, pokazując, jak responsywnie dostosowuje się do zmiany rozmiaru ekranu.s
+Zrzuty ekranu prezentują wygląd aplikacji zarówno na telefonach, jak i tabletach, pokazując, jak responsywnie dostosowuje się do zmiany rozmiaru ekranu.
 
 ![Currency converter](public/images/size.png)
