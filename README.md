@@ -1,5 +1,5 @@
 <p align="right">
-  🌍&nbsp; <a href="README.md">polish</a>  &nbsp; english
+  🌍&nbsp; <a href="README-pl.md">polish</a>  &nbsp; english
 </p>
 
 # [Currency Exchange Calculator](https://mariuszmmm.github.io/currency-converter-react/)
