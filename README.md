@@ -1,61 +1,77 @@
-# **Currency converter**
+# [Currency Exchange Calculator](https://mariuszmmm.github.io/currency-converter-react/)
+* [Try it Now](https://mariuszmmm.github.io/currency-converter-react/)
+* [Description ](#description)
+* [Technologies](#technologies)
+* [Setup](#setup )
+* [Application view](#application-view)
+
+
+#
+![Currency converter](/images/presentation.gif)
+#
+<br>
 
 ## Description
+<b>'Currency Exchange Calculator'</b> is an application built on the React.js library.<br>
+It allows for easy and quick currency conversion based on the current exchange rates from the National Bank of Poland (NBP).
 
-Simple currency converter from PLN, EUR, USD, GBP, CNY, UAH. Converts currencies to both sides.  
-Currency rates are assigned by default but can be changed.  
+The application utilizes the fetch technology to retrieve current currency exchange rates from an external data source.<br>
+Thanks to error handling using the catch method, the application can react to situations where data retrieval fails.
 
-The application has been prepared for convenient use also on tablets and smartphones.
-#
- Check it out:     -->    https://mariuszmmm.github.io/currency-converter-react/     <--
-#
+In case an error occurs while fetching the current currency exchange rates, the application automatically suggests loading the last saved rates from the local storage.<br>
+This allows users to access the most recently saved rates despite connectivity issues with the external source.
+
+Additionally, the application is responsive, adapting seamlessly to various screen sizes and devices for an enhanced user experience.
+
+<br>
+
+## Technologies
+<ul>
+<li>JavaScript ES6+ Features</li>
+<li>React.js</li>
+<li>JSX</li>
+<li>CSS</li>
+<li>Styled Components</li>
+<li>Media Queries</li>
+<li>Controlled Components</li>
+<li>Custom Hooks</li>
+<li>API Integration</li>
+</ul>
+
+<br>
+
+## Setup
+To run the program from the currency-converter-react repository on your local computer, you can follow these steps:
+1. <b>Downloading the source code:</b><br>
+Clone the repository from the GitHub page to your local computer using the command:
+```commandline
+     git clone https://github.com/mariuszmmm/currency-converter-react.git
+```
+2. <b>Dependency Installation:</b><br>
+Navigate to the project directory, then install all required dependencies using a package manager like npm:
+```commandline
+    cd currency-converter-react
+    npm install
+```
+3. <b>Launching the Application:</b><br>
+After installing the dependencies, you can run the application locally. Use the command:
+```commandline
+    npm start
+```
+  This command will start the application in developer mode, opening it in a browser at http://localhost:3000.
+
+<br>
+
+## Application view
+((((
+Application view (ta sekcja zawiera pliki graficzne przedstawiające wygląd/działanie utworzonej aplikacji)
+<img src=”URL” width=”50%” height=”50%”>
 ![Currency converter](public/images/animation.gif)
-#
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-#
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Technologies Used
-  
-- Javascript ES6+
-
-- HTML 5
-
-- CSS
-
-- Styled Component
-
-- Normalize.css
-
-- React
-
+W sekcji "Application view" można umieścić zrzuty ekranu (screenshots) lub zapisy ekranu prezentujące poszczególne widoki i funkcjonalności aplikacji currency-converter-react. Można opisywać każdy z widoków wraz z ich funkcjonalnościami.
+Strona główna: Zrzut ekranu pokazujący interfejs użytkownika z miejscami na wprowadzenie kwoty oraz wybór walut.
+Przykładowa konwersja: Screenshot prezentujący wynik przeliczenia kwoty z jednej waluty na drugą.
+Responsywność: Można umieścić zrzuty ekranu prezentujące wygląd aplikacji na różnych urządzeniach - na komputerze, tablecie oraz telefonie, pokazujące responsywność interfejsu.
+Interakcje użytkownika: Jeśli istnieją interaktywne elementy, można zrobić zrzuty ekranu lub zapisy ekranu prezentujące interakcje użytkownika, takie jak wybór walut, wprowadzenie kwoty, aktualizacja wyników itp.
+Dobrze byłoby opatrzyć każdy z zrzutów ekranu krótkim opisem lub adnotacją, wyjaśniającym co jest widoczne na obrazie oraz jakie funkcje są w danym widoku dostępne. To pomaga innym użytkownikom zrozumieć, jak korzystać z aplikacji i jakie funkcje są dostępne.
+))))
+_________________________________________
