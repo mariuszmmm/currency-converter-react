@@ -24,7 +24,8 @@ The application utilizes the fetch technology to retrieve current currency excha
 Thanks to error handling using the catch method, the application can react to situations where data retrieval fails.
 
 In case an error occurs while fetching the current currency exchange rates, the application automatically suggests loading the last saved rates from the local storage.<br>
-This allows users to access the most recently saved rates despite connectivity issues with the external source.
+This allows users to access recently saved rates in the event of connectivity issues with an external source.
+Thanks to this, users have access to the recently saved exchange rates despite potential connectivity issues with the external source.
 
 Additionally, the application is responsive, adapting seamlessly to various screen sizes and devices.
 
