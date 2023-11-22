@@ -66,7 +66,11 @@ After installing the dependencies, you can run the application locally. Use the 
 ((((
 Application view (ta sekcja zawiera pliki graficzne przedstawiające wygląd/działanie utworzonej aplikacji)
 <img src=”URL” width=”50%” height=”50%”>
-![Currency converter](public/images/animation.gif)
+
+#
+![Currency converter](/images/size.png)
+#
+
 W sekcji "Application view" można umieścić zrzuty ekranu (screenshots) lub zapisy ekranu prezentujące poszczególne widoki i funkcjonalności aplikacji currency-converter-react. Można opisywać każdy z widoków wraz z ich funkcjonalnościami.
 Strona główna: Zrzut ekranu pokazujący interfejs użytkownika z miejscami na wprowadzenie kwoty oraz wybór walut.
 Przykładowa konwersja: Screenshot prezentujący wynik przeliczenia kwoty z jednej waluty na drugą.
