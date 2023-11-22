@@ -24,7 +24,7 @@ Aplikacja wykorzystuje technologię 'fetch' do pobierania bieżących kursów wy
 Dzięki obsłudze błędów za pomocą metody 'catch', aplikacja reaguje na sytuacje, w których pobieranie danych się nie powiedzie.
 
 W przypadku wystąpienia błędu podczas pobierania aktualnych kursów walut, aplikacja automatycznie proponuje załadowanie ostatnio zapisanych kursów z local storage.<br>
-Dzięki temu użytkownicy mają dostęp do ostatnio zapisanych kursów pomimo ewentualnych problemów z łącznością ze źródłem zewnętrznym.
+Umożliwia to użytkownikom dostęp do ostatnio zapisanych stawek w przypadku problemów z łącznością ze źródłem zewnętrznym.
 
 Dodatkowo, aplikacja jest responsywna, płynnie dostosowując się do różnych rozmiarów ekranów i urządzeń.
 
@@ -46,7 +46,7 @@ Dodatkowo, aplikacja jest responsywna, płynnie dostosowując się do różnych 
 <br>
 
 ## Konfiguracja
-Aby uruchomić program z repozytorium currency-converter-react na swoim komputerze, wykonaj następujące kroki:
+Aby uruchomić program z repozytorium 'currency-converter-react' na swoim komputerze, wykonaj następujące kroki:
 <b>Pobranie kodu źródłowego:</b><br>
 1. Sklonuj repozytorium ze strony GitHub na swój komputer lokalny za pomocą polecenia:
 ```commandline
