@@ -30,7 +30,7 @@ Dodatkowo, aplikacja jest responsywna, płynnie dostosowując się do różnych 
 
 <br>
 
-## 🛠&#x1F6E0; Technologie
+## &#x1F6E0; Technologie
 <ul>
 <li>JavaScript ES6+ Features</li>
 <li>React.js</li>
