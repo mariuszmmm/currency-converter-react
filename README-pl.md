@@ -4,11 +4,11 @@
 
 # [Przelicznik walut](https://mariuszmmm.github.io/currency-converter-react/)
 * [Wypróbuj teraz](https://mariuszmmm.github.io/currency-converter-react/)
-* [Prezentacja](#prezentacja)
-* [Opis](#opis)
-* [Technologie](#technologie)
-* [Konfiguracja](#konfiguracja)
-* [Widok aplikacji](#widok-aplikacji)
+* [Prezentacja](#-prezentacja)
+* [Opis](#-opis)
+* [Technologie](#-technologie)
+* [Konfiguracja](#-konfiguracja)
+* [Widok aplikacji](#-widok-aplikacji)
 <br>
 
 ## 🎬 Prezentacja
