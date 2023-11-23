@@ -11,12 +11,12 @@
 * [Application view](#application-view)
 <br>
 
-## Presentation
+## 🎬 Presentation
 ![Currency converter](public/images/presentation.gif)
 
 <br>
 
-## Description
+## 📝 Description
 <b>'Currency converter'</b> is an application built on the React.js library.<br>
 It allows for easy and quick currency conversion based on the current exchange rates from the National Bank of Poland (NBP).
 
@@ -31,7 +31,7 @@ Additionally, the application is responsive, adapting seamlessly to various scre
 
 <br>
 
-## Technologies
+## 🛠️ Technologies
 <ul>
 <li>JavaScript ES6+ Features</li>
 <li>React.js</li>
@@ -46,7 +46,7 @@ Additionally, the application is responsive, adapting seamlessly to various scre
 
 <br>
 
-## Setup
+## ⚙️ Setup
 To run the program from the 'currency-converter-react' repository on your local computer, you can follow these steps:
 1. <b>Downloading the source code:</b><br>
 Clone the repository from the GitHub page to your local computer using the command:
@@ -68,7 +68,7 @@ After installing the dependencies, you can run the application locally. Use the 
 
 <br>
 
-## Application view
+## 🖥️ Application view
 The application is fully responsive and adapts to various devices.<br>
 Screenshots showcase the app's appearance on both phones and tablets, demonstrating how it responsively adjusts to screen size changes
 
