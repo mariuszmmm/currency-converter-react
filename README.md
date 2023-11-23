@@ -11,7 +11,7 @@
 * [Application view](#-application-view)
 <br>
 
-## &#x1F3AC; Presentation
+## :clapper: Presentation
 ![Currency converter](public/images/presentation.gif)
 
 <br>
