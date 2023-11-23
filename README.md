@@ -11,7 +11,7 @@
 * [Application view](#-application-view)
 <br>
 
-## &#x1F6E0; Presentation
+## 🎬 Presentation
 ![Currency converter](public/images/presentation.gif)
 
 <br>
@@ -31,7 +31,7 @@ Additionally, the application is responsive, adapting seamlessly to various scre
 
 <br>
 
-## 🎬 Technologies
+## &#x1F6E0; Technologies
 
 <ul>
 <li>JavaScript ES6+ Features</li>
