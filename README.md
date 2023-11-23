@@ -2,7 +2,7 @@
   🌍&nbsp; <a href="README-pl.md">polish</a>  &nbsp; english
 </p>
 
-# [Currency Exchange Calculator](https://mariuszmmm.github.io/currency-converter-react/)
+# [Currency converter](https://mariuszmmm.github.io/currency-converter-react/)
 * [Try it Now](https://mariuszmmm.github.io/currency-converter-react/)
 * [Presentation](#presentation)
 * [Description ](#description)
@@ -17,7 +17,7 @@
 <br>
 
 ## Description
-<b>'Currency Exchange Calculator'</b> is an application built on the React.js library.<br>
+<b>'Currency converter'</b> is an application built on the React.js library.<br>
 It allows for easy and quick currency conversion based on the current exchange rates from the National Bank of Poland (NBP).
 
 The application utilizes the 'fetch' technology to retrieve current currency exchange rates from an external data source.<br>
