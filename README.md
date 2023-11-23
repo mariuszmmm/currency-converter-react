@@ -31,7 +31,7 @@ Additionally, the application is responsive, adapting seamlessly to various scre
 
 <br>
 
-## Technologies 
+## Technologies 🛠️
 <ul>
 <li>JavaScript ES6+ Features</li>
 <li>React.js</li>
