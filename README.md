@@ -11,7 +11,7 @@
 * [Application view](#-application-view)
 <br>
 
-## 🎬 Presentation
+## &#x1F3AC; Presentation
 ![Currency converter](public/images/presentation.gif)
 
 <br>
