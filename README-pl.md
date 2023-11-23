@@ -2,7 +2,7 @@
   🌍&nbsp; <a href="README.md">angielski</a> &nbsp; polski
 </p>
 
-# [Kalkulator wymiany walut](https://mariuszmmm.github.io/currency-converter-react/)
+# [Przelicznik walut](https://mariuszmmm.github.io/currency-converter-react/)
 * [Wypróbuj teraz](https://mariuszmmm.github.io/currency-converter-react/)
 * [Prezentacja](#prezentacja)
 * [Opis](#opis)
@@ -17,7 +17,7 @@
 <br>
 
 ## Opis
-<b>'Kalkulator wymiany walut'</b> to aplikacja zbudowana przy użyciu biblioteki React.js.<br>
+<b>'Przelicznik walut'</b> to aplikacja zbudowana przy użyciu biblioteki React.js.<br>
 Pozwala na łatwą i szybką konwersję walut na podstawie aktualnych kursów wymiany ze strony Narodowego Banku Polskiego (NBP).
 
 Aplikacja wykorzystuje technologię 'fetch' do pobierania bieżących kursów wymiany walut z zewnętrznego źródła danych.<br>
