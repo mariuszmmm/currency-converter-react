@@ -12,7 +12,7 @@
 <br>
 
 ## 🎬 Presentation
-![Currency converter](public/images/presentation.gif)
+![Currency converter](images/presentation.gif)
 
 <br>
 
@@ -73,4 +73,4 @@ After installing the dependencies, you can run the application locally. Use the 
 The application is fully responsive and adapts to various devices.<br>
 Screenshots showcase the app's appearance on both phones and tablets, demonstrating how it responsively adjusts to screen size changes
 
-![Currency converter](public/images/size.png)
+![Currency converter](images/size.png)

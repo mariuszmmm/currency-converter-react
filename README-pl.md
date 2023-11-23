@@ -12,7 +12,7 @@
 <br>
 
 ## 🎬 Prezentacja
-![Currency converter](public/images/presentation.gif)
+![Currency converter](images/presentation.gif)
 
 <br>
 
@@ -72,4 +72,4 @@ Po zainstalowaniu zależności, możesz uruchomić aplikację lokalnie. Użyj po
 Aplikacja jest w pełni responsywna i dostosowuje się do różnych urządzeń.<br>
 Zrzuty ekranu prezentują wygląd aplikacji zarówno na telefonach, jak i tabletach, pokazując, jak responsywnie dostosowuje się do zmiany rozmiaru ekranu.
 
-![Currency converter](public/images/size.png)
+![Currency converter](images/size.png)
