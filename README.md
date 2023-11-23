@@ -16,7 +16,7 @@
 
 <br>
 
-## 📝 Description
+## 📝  Description
 <b>'Currency converter'</b> is an application built on the React.js library.<br>
 It allows for easy and quick currency conversion based on the current exchange rates from the National Bank of Poland (NBP).
 
