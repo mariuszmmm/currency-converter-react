@@ -47,7 +47,7 @@ Additionally, the application is responsive, adapting seamlessly to various scre
 
 <br>
 
-## ⚙️ Setup
+## &#9873; Setup
 To run the program from the 'currency-converter-react' repository on your local computer, you can follow these steps:
 1. <b>Downloading the source code:</b><br>
 Clone the repository from the GitHub page to your local computer using the command:
@@ -69,7 +69,7 @@ After installing the dependencies, you can run the application locally. Use the 
 
 <br>
 
-## 🖥️ Application view
+## 🖥&#x1F5A5; Application view
 The application is fully responsive and adapts to various devices.<br>
 Screenshots showcase the app's appearance on both phones and tablets, demonstrating how it responsively adjusts to screen size changes
 
