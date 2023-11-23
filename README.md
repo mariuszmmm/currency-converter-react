@@ -4,9 +4,9 @@
 
 # [Currency converter](https://mariuszmmm.github.io/currency-converter-react/)
 * [Try it Now](https://mariuszmmm.github.io/currency-converter-react/)
-* [Presentation](#presentation)
-* [Description](#description)
-* [Technologies🛠️](#technologies🛠️)
+* [Presentation](#-presentation)
+* [Description](#-description)
+* [Technologies🛠](#technologies🛠)
 * [Setup](#-setup)
 * [Application view](#-application-view)
 <br>
