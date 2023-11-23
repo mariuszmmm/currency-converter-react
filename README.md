@@ -2,8 +2,6 @@
   🌍&nbsp; <a href="README-pl.md">polish</a>  &nbsp; english
 </p>
 
-<span style="color:red">ggf</span>
-
 # [Currency converter](https://mariuszmmm.github.io/currency-converter-react/)
 * [Try it Now](https://mariuszmmm.github.io/currency-converter-react/)
 * [Presentation](#presentation)
