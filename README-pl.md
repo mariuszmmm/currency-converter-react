@@ -45,7 +45,7 @@ Dodatkowo, aplikacja jest responsywna, płynnie dostosowując się do różnych 
 
 <br>
 
-## &#x2699; Konfiguracja
+## ⚙ Konfiguracja
 Aby uruchomić program z repozytorium 'currency-converter-react' na swoim komputerze, wykonaj następujące kroki:
 
 1. <b>Pobranie kodu źródłowego:</b><br>
@@ -68,7 +68,7 @@ Po zainstalowaniu zależności, możesz uruchomić aplikację lokalnie. Użyj po
 
 <br>
 
-## &#x1F5A5; Widok aplikacji
+## 🖥 Widok aplikacji
 Aplikacja jest w pełni responsywna i dostosowuje się do różnych urządzeń.<br>
 Zrzuty ekranu prezentują wygląd aplikacji zarówno na telefonach, jak i tabletach, pokazując, jak responsywnie dostosowuje się do zmiany rozmiaru ekranu.
 
