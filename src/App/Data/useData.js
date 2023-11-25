@@ -5,8 +5,8 @@ import { fetchFromApi } from "./fetchFromApi";
 
 export const useData = () => {
   const [data, setData] = useState({
-    stateData: "loading",
-    stateError: false,
+    state: "loading",
+    error: false,
     currentData: null,
     oldData: null,
   });
@@ -29,7 +29,7 @@ export const useData = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    setData({ ...data, stateData: "fromCopy" });
+    setData({ ...data, state: "fromCopy" });
   };
 
   return { data, onFormSubmit };

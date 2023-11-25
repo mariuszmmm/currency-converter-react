@@ -1,5 +1,5 @@
 export const setLocalStorage = (key, data, setData) => {
-  if (data.stateData === "ok") {
+  if (data.state === "ok") {
     const toLocalStore = {
       date: data.currentData.date,
       number: data.currentData.number,
@@ -9,7 +9,7 @@ export const setLocalStorage = (key, data, setData) => {
     localStorage.setItem(key, JSON.stringify(toLocalStore));
   };
 
-  if (data.stateError && data.stateData === "loading") {
-    setData(data.oldData ? { ...data, stateData: "error" } : { ...data, stateData: null });
+  if (data.error && data.state === "loading") {
+    setData(data.oldData ? { ...data, state: "error" } : { ...data, state: null });
   };
 };

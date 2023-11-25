@@ -7,19 +7,19 @@ import { Error } from "./Error"
 
 const App = () => {
   const {
-    data: { stateData, stateError, currentData, oldData }, onFormSubmit
+    data: { state, error, currentData, oldData }, onFormSubmit
   } = useData();
 
   return (
     <>
-      {["ok", "fromCopy"].includes(stateData) ?
+      {["ok", "fromCopy"].includes(state) ?
         <Form
-          data={stateData === "ok" ? currentData : oldData}
+          data={state === "ok" ? currentData : oldData}
         />
         :
         <Data onFormSubmit={onFormSubmit}>
-          <StyledLegend error={stateError}>
-            {stateData === "loading" ?
+          <StyledLegend error={error}>
+            {state === "loading" ?
               <Loading />
               :
               <Error oldData={oldData} />

@@ -55,7 +55,7 @@ export const newData = (data, setData) => {
   };
 
   setData({
-    stateData: "ok",
+    state: "ok",
     currentData: { date, number, currenciesData }
   });
 };
