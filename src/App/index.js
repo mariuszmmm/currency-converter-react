@@ -22,10 +22,7 @@ const App = () => {
             {stateData === "loading" ?
               <Loading />
               :
-              stateData === "error" ?
-                <Error oldData={oldData}/>
-                :
-                <Error oldData={oldData} />
+              <Error oldData={oldData} />
             }
           </StyledLegend>
         </Data>
