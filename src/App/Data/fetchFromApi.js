@@ -11,10 +11,9 @@ export const fetchFromApi = (setData) => {
     })
     .then((response) => response.json())
     .then((data) => newData(data[0], setData))
-    .catch((err) => {
-      console.error("ERROR !!!", err)
+    .catch(() => {
       setData(prevData => ({
-        ...prevData, stateError: true
+        ...prevData, error: true
       }))
     });
 };
